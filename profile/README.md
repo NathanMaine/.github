@@ -1,3 +1,38 @@
+# 👋 Welcome — Start Here
+
+If you’re exploring my work, here are the best places to begin.  
+These three projects show the core themes of my research:  
+**real-time intelligence, agentic AI, governance, workflow orchestration, and developer experience automation.**
+
+---
+
+### 🚀 **1. Project Aurora Echo — Real-Time Meeting Intelligence**  
+Real-time audio → transcription → reasoning → structured memory.  
+*If you only look at one project, make it this one.*  
+🔗 https://github.com/NathanMaine/Project-Aurora-Echo  
+
+---
+
+### 🧪 **2. Compliance Validation Agent — Governed Agentic Flows**  
+Shows agentic governance, rule enforcement, and structured validation.  
+Demonstrates practical patterns for enterprise-safe AI.  
+🔗 https://github.com/NathanMaine/compliance-validation-agent  
+
+---
+
+### 🧩 **3. Agentforce Data-Aware Agent — Metadata-Aware Safe Actions (Salesforce)**  
+Auto-discovers org schema → enforces FLS/sharing → runs safe Apex/Flow actions.  
+Bridges enterprise systems with trustworthy AI-assisted execution.  
+🔗 https://github.com/NathanMaine/Agentforce-Data-Aware-Agent  
+
+---
+
+### 📚 **Full Portfolio (24 Public Projects)**  
+Agentic AI • Real-Time Intelligence • Developer Experience • Classical AI • Salesforce  
+🔗 https://github.com/NathanMaine?tab=repositories
+
+---
+
 # 🌐 Nathan Maine — AI Systems & Research Portfolio
 
 A curated set of 24 public projects across agentic AI, real-time intelligence, Salesforce automation, classical AI, and developer tooling.
