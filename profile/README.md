@@ -1,8 +1,7 @@
 # 👋 Welcome — Start Here
 
-If you’re exploring my work, here are the best places to begin.  
-These three projects show the core themes of my research:  
-**real-time intelligence, agentic AI, governance, workflow orchestration, and developer experience automation.**
+If you’re exploring my work, these three projects are the best place to begin.  
+They show the core themes across my portfolio: **real-time intelligence, agentic AI, governance, workflow orchestration, and developer experience automation.**
 
 ---
 
@@ -14,49 +13,49 @@ Real-time audio → transcription → reasoning → structured memory.
 ---
 
 ### 🧪 **2. Compliance Validation Agent — Governed Agentic Flows**  
-Shows agentic governance, rule enforcement, and structured validation.  
-Demonstrates practical patterns for enterprise-safe AI.  
+Demonstrates governance-first agent behavior, rule enforcement, and structured validation for enterprise workflows.  
 🔗 https://github.com/NathanMaine/compliance-validation-agent  
 
 ---
 
 ### 🧩 **3. Agentforce Data-Aware Agent — Metadata-Aware Safe Actions (Salesforce)**  
 Auto-discovers org schema → enforces FLS/sharing → runs safe Apex/Flow actions.  
-Bridges enterprise systems with trustworthy AI-assisted execution.  
 🔗 https://github.com/NathanMaine/Agentforce-Data-Aware-Agent  
 
 ---
 
 ### 📚 **Full Portfolio (24 Public Projects)**  
-Agentic AI • Real-Time Intelligence • Developer Experience • Classical AI • Salesforce  
+This portfolio includes **10 core agentic AI prototypes** plus **14 supporting experiments** across real-time intelligence, Salesforce automation, classical AI, developer tooling, and creative systems.  
 🔗 https://github.com/NathanMaine?tab=repositories
 
 ---
 
 # 🌐 Nathan Maine — AI Systems & Research Portfolio
 
-A curated set of 24 public projects across agentic AI, real-time intelligence, Salesforce automation, classical AI, and developer tooling.
+A structured set of 24 public projects exploring practical agentic systems, real-time AI, governance patterns, and applied experimentation.
 
 ---
 
-## 🧪 Agentic AI Research (Python)
+## 🧪 Agentic AI Research (10 Core Projects — Python)
+
+These are the ten Spec-Kit–structured projects that define the enterprise agentic stack used across synergy systems on my portfolio site.
 
 | Project | Description | Link |
 |--------|-------------|------|
-| Compliance Validation Agent | Rule-based validation for workflows | https://github.com/NathanMaine/compliance-validation-agent |
+| Compliance Validation Agent | Governed validation for enterprise workflows | https://github.com/NathanMaine/compliance-validation-agent |
 | Architecture Review Agent | Structured review of HLD/PRD artifacts | https://github.com/NathanMaine/architectural-design-review-agent |
 | MCP Conversational Data Agent | Conversational access to system data via MCP | https://github.com/NathanMaine/mcp-conversational-data-agent |
 | Agentic Workflow Simplifier | Multi-step reasoning and workflow execution | https://github.com/NathanMaine/agentic-workflow-simplifier |
 | AI Deployment Experience Bot | Deployment guardrails in chat | https://github.com/NathanMaine/ai-deployment-experience-bot |
 | Semantic Test Coverage Agent | Ensures SDLC testing depth | https://github.com/NathanMaine/semantic-test-coverage-agent |
 | Living Docforce Agent | Keeps documentation aligned with systems | https://github.com/NathanMaine/living-docforce-agent |
-| Performance Test Generator | Creates performance/load test plans | https://github.com/NathanMaine/agent-perf-test-generator |
-| DevEx Bootstrap Agent | Auto-setup developer environments | https://github.com/NathanMaine/devex-env-bootstrap-agent |
-| Voice Robustness Testing Agent | Conversation robustness evaluation | https://github.com/NathanMaine/voice-robustness-testing-agent |
+| Performance Test Generator | Agent-driven performance/load test generation | https://github.com/NathanMaine/agent-perf-test-generator |
+| DevEx Environment Bootstrap Agent | Automated developer environment setup | https://github.com/NathanMaine/devex-env-bootstrap-agent |
+| Voice Robustness Testing Agent | Evaluates robustness of ASR-driven interactions | https://github.com/NathanMaine/voice-robustness-testing-agent |
 
 ---
 
-## 🎙️ Real-Time AI & Meeting Intelligence
+## 🎙️ Real-Time AI & Meeting Intelligence (Experiments)
 
 | Project | Description | Link |
 |--------|-------------|------|
@@ -68,7 +67,7 @@ A curated set of 24 public projects across agentic AI, real-time intelligence, S
 
 ---
 
-## 🧩 Salesforce / Agentforce
+## 🧩 Salesforce / Agentforce (Experiments)
 
 | Project | Description | Link |
 |--------|-------------|------|
@@ -78,7 +77,7 @@ A curated set of 24 public projects across agentic AI, real-time intelligence, S
 
 ---
 
-## 🧠 Classical AI (Common Lisp)
+## 🧠 Classical AI (Common Lisp Experiments)
 
 | Project | Description | Link |
 |--------|-------------|------|
@@ -87,7 +86,7 @@ A curated set of 24 public projects across agentic AI, real-time intelligence, S
 
 ---
 
-## ♟️ Chess Analysis
+## ♟️ Chess Analysis (Experiments)
 
 | Project | Description | Link |
 |--------|-------------|------|
@@ -101,4 +100,8 @@ A curated set of 24 public projects across agentic AI, real-time intelligence, S
 | Project | Description | Link |
 |--------|-------------|------|
 | Thermomix Recipe Genius | AI-driven recipe generator | https://github.com/NathanMaine/Thermomix-Recipe-Genius |
-| Bongo Cat Monitor Remix | C-based animated monitor | https://github.com/NathanMaine/bongo_cat_monitor_remix |
+| Bongo Cat Monitor Remix | Animated desktop monitor companion | https://github.com/NathanMaine/bongo_cat_monitor_remix |
+
+---
+
+*This profile intentionally separates the ten core agentic projects from the fourteen supporting experiments to mirror the structure of my full portfolio site.*
