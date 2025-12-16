@@ -26,7 +26,7 @@ Auto-discovers org schema → enforces FLS/sharing → runs safe Apex/Flow actio
 
 ### 📚 **Full Portfolio (24 Public Projects)**  
 This portfolio includes **10 core agentic AI prototypes** plus **14 supporting experiments** across real-time intelligence, Salesforce automation, classical AI, developer tooling, and creative systems.  
-🔗 https://github.com/NathanMaine?tab=repositories
+🔗 https://github.com/orgs/NathanMaine/repositories
 
 ---
 
