@@ -30,6 +30,23 @@ This portfolio includes **10 core agentic AI prototypes** plus **14 supporting e
 
 ---
 
+## 🧰 Agent Suite (5 runnable tools)
+
+A cohesive set of five standalone repos that share a consistent install flow, CLI entry points, output conventions (`out/`), and CI.  
+If you want the fastest “hands-on” tour, start here.
+
+| Tool | What it does | Repo | Quickstart |
+|------|--------------|------|-----------|
+| **aes** | Scenario runner with Doer/Judge stubs → evidence + run summary | https://github.com/NathanMaine/agentic-evaluation-sandbox | https://github.com/NathanMaine/agentic-evaluation-sandbox#quickstart |
+| **ggc** | Policy Markdown → governance graph exports | https://github.com/NathanMaine/governance-graph-compiler | https://github.com/NathanMaine/governance-graph-compiler#quickstart |
+| **amg** | Ingest meeting events → graph memory + explain paths | https://github.com/NathanMaine/agentic-memory-graph-engine | https://github.com/NathanMaine/agentic-memory-graph-engine#quickstart |
+| **shaw** | Workflow run with failure → retry → recovery evidence | https://github.com/NathanMaine/self-healing-agentic-workflows | https://github.com/NathanMaine/self-healing-agentic-workflows#quickstart |
+| **tea** | Temporal planning by deps/due dates → plan + state | https://github.com/NathanMaine/temporal-executive-agent | https://github.com/NathanMaine/temporal-executive-agent#quickstart |
+
+**Run the whole suite:** https://github.com/NathanMaine/agentic-ai-portfolio
+
+---
+
 # 🌐 Nathan Maine — AI Systems & Research Portfolio
 
 A structured set of 24 public projects exploring practical agentic systems, real-time AI, governance patterns, and applied experimentation.
