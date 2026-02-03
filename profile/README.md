@@ -8,7 +8,7 @@
 
 I deliver enterprise platforms that power critical business outcomes — from identity systems serving 700K users to data platforms unifying 89M records across 28+ sources. I've led $20M+ portfolios at Salesforce with 5/5 CSAT and cut delivery cycles by 67%.
 
-Now building AI systems that solve the problems I've spent a career navigating.
+AI systems that solve the problems I've spent a career navigating.
 
 ---
 
