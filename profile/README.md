@@ -59,18 +59,98 @@ Standalone repos with consistent install flow, CLI entry points, and CI. The fas
 
 ### 🧪 Agentic AI Research (10 Core Projects)
 
-| Project | Description |
-|---------|-------------|
-| [Compliance Validation Agent](https://github.com/NathanMaine/compliance-validation-agent) | Governed validation for enterprise workflows |
-| [Architecture Review Agent](https://github.com/NathanMaine/architectural-design-review-agent) | Structured review of HLD/PRD artifacts |
-| [MCP Conversational Data Agent](https://github.com/NathanMaine/mcp-conversational-data-agent) | Conversational access to system data via MCP |
-| [Agentic Workflow Simplifier](https://github.com/NathanMaine/agentic-workflow-simplifier) | Multi-step reasoning and workflow execution |
-| [AI Deployment Experience Bot](https://github.com/NathanMaine/ai-deployment-experience-bot) | Deployment guardrails in chat |
-| [Semantic Test Coverage Agent](https://github.com/NathanMaine/semantic-test-coverage-agent) | Ensures SDLC testing depth |
-| [Living Docforce Agent](https://github.com/NathanMaine/living-docforce-agent) | Keeps documentation aligned with systems |
-| [Performance Test Generator](https://github.com/NathanMaine/agent-perf-test-generator) | Agent-driven performance/load test generation |
-| [DevEx Environment Bootstrap Agent](https://github.com/NathanMaine/devex-env-bootstrap-agent) | Automated developer environment setup |
-| [Voice Robustness Testing Agent](https://github.com/NathanMaine/voice-robustness-testing-agent) | Evaluates robustness of ASR-driven interactions |
+# AI Agent Portfolio
+
+**10 repositories. One architecture. Zero black boxes.**
+
+A portfolio of purpose-built AI agents spanning compliance, testing, fairness, documentation, and operational intelligence. Every repo uses deterministic, auditable logic — identical inputs always produce identical outputs. Built for environments where you need to explain every decision to an auditor, not just a user.
+
+---
+
+## 🛡️ The Flagship
+
+### [governed-llm-gateway](https://github.com/NathanMaine/governed-llm-gateway)
+**The compliance-first LLM gateway.**
+
+Route LLM requests through a governed endpoint with tamper-evident audit trails, policy-as-code enforcement, and compliance evidence export. The gateway answers the question every CISO asks before approving LLM usage in a regulated environment: *"How do we prove to auditors that every LLM interaction was authorized, logged immutably, and compliant with our policies?"*
+
+`SHA-256 Hash Chain` · `Merkle Tree Verification` · `YAML Policy Engine` · `PII Detection` · `SOC 2 + HIPAA Evidence Packages` · `12 Regulatory Controls Mapped`
+
+---
+
+## ⚡ The Full Portfolio
+
+### Testing & Validation
+
+| # | Repository | What It Does | Distinguishing Feature |
+|---|---|---|---|
+| 01 | **voice-robustness-testing-agent** | Tests voice/NLU classifiers using structured test sets with pluggable classifier protocols. Regex keyword scoring with tie-breaking catches edge cases that unit tests miss. | 3-state outcome model (PASS / AMBIGUOUS / FAIL) |
+| 02 | **architectural-design-review-agent** | Ingests YAML architecture briefs and produces structured reviews via LLM with JSON schema extraction. Dual-mode operation runs with or without an API key. | SHA-256 brief content hashing for evidence integrity |
+| 03 | **compliance-validation-agent** | Assesses whether a software change satisfies a compliance checklist. Category-aware keyword matching across 5 domains performs real analysis without requiring an LLM. | Real analysis in stub mode — no LLM required |
+| 04 | **agent-perf-test-generator** | Generates structured load test plans from service profiles. Three scenario patterns (steady, burst, soak) with automatic burst threshold relaxation at 1.5x. | Parametric scenario generation with SLO-derived checks |
+
+### Documentation & Knowledge
+
+| # | Repository | What It Does | Distinguishing Feature |
+|---|---|---|---|
+| 05 | **living-docforce-agent** | Detects documentation drift by comparing entities from source code against docs. Multi-framework support (Flask + Express) with path normalization across conventions. | Version-aware endpoint drift detection — zero LLM dependency |
+| 06 | **meeting-memory-companion** | Extracts structured data from meeting notes and answers queries via cascading phrase-based classification across 6 categories with token-overlap scoring. | 6-category query classifier with evidence-backed responses |
+
+### Operations & Intelligence
+
+| # | Repository | What It Does | Distinguishing Feature |
+|---|---|---|---|
+| 07 | **ai-ops-kpi-pipeline** | ETL pipeline that ingests KPI snapshots and produces aggregated reports. Suffix-based heuristics automatically classify columns — `_total` summed, `latency_` averaged. | Heuristic metric classification — zero external dependencies |
+| 08 | **devex-metrics-dashboard** | Evaluates 7 engineering health categories against DORA-aligned thresholds. Signal-counting aggregation prevents single-metric domination. | Signal-counting health aggregation across 7 categories |
+
+### Fairness & Governance
+
+| # | Repository | What It Does | Distinguishing Feature |
+|---|---|---|---|
+| 09 | **multi-agent-fairness-governor** | Allocates tasks using weighted round-robin with priority ordering and capacity constraints. Weight-expanded rotation ensures exact proportional distribution. | Fully deterministic — skew-ratio fairness metric |
+
+---
+
+## Design Principles
+
+These repos share a common philosophy:
+
+**Deterministic by default.** No hidden randomness, no model drift, no non-reproducible outputs. Given the same inputs, every repo produces the same outputs every time.
+
+**Auditable at every layer.** JSONL evidence logging, hash-chain audit trails, timestamped entries. Every decision can be traced, verified, and explained.
+
+**Minimal dependencies.** Four of the ten repos run on Python's standard library alone. The rest use only well-established, open-source libraries (Click, FastAPI, PyYAML, httpx, Pydantic).
+
+**LLM-optional.** Most repos operate without any LLM calls. Those that support LLM integration also provide a fully functional stub mode for testing, CI/CD, and air-gapped environments.
+
+---
+
+## At a Glance
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                    10 REPOS  ·  500+ TESTS                   │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  🛡️  governed-llm-gateway          Compliance-first gateway │
+│  🎙️  voice-robustness-testing      NLU classifier testing   │
+│  🏗️  architectural-design-review   Architecture brief review │
+│  ✅  compliance-validation          SDLC checklist assessment│
+│  📄  living-docforce                Documentation drift       │
+│  ⚡  agent-perf-test-generator      Load test plan generation │
+│  📊  ai-ops-kpi-pipeline            KPI aggregation pipeline │
+│  🧠  meeting-memory-companion       Meeting notes extraction │
+│  ⚖️  multi-agent-fairness-governor  Fair task allocation     │
+│  📈  devex-metrics-dashboard        DORA metrics engine      │
+│                                                              │
+├──────────────────────────────────────────────────────────────┤
+│  Python  ·  FastAPI  ·  Click CLI  ·  Zero black boxes       │
+└──────────────────────────────────────────────────────────────┘
+```
+
+---
+
+*Built by [Nathan Maine](https://github.com/NathanMaine) · © 2025 Memoriant, Inc.*
 
 ### 🎙️ Real-Time AI & Meeting Intelligence (5 Projects)
 
