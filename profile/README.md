@@ -84,30 +84,30 @@ Route LLM requests through a governed endpoint with tamper-evident audit trails,
 
 | # | Repository | What It Does | Distinguishing Feature |
 |---|---|---|---|
-| 01 | **voice-robustness-testing-agent** | Tests voice/NLU classifiers using structured test sets with pluggable classifier protocols. Regex keyword scoring with tie-breaking catches edge cases that unit tests miss. | 3-state outcome model (PASS / AMBIGUOUS / FAIL) |
-| 02 | **architectural-design-review-agent** | Ingests YAML architecture briefs and produces structured reviews via LLM with JSON schema extraction. Dual-mode operation runs with or without an API key. | SHA-256 brief content hashing for evidence integrity |
-| 03 | **compliance-validation-agent** | Assesses whether a software change satisfies a compliance checklist. Category-aware keyword matching across 5 domains performs real analysis without requiring an LLM. | Real analysis in stub mode — no LLM required |
-| 04 | **agent-perf-test-generator** | Generates structured load test plans from service profiles. Three scenario patterns (steady, burst, soak) with automatic burst threshold relaxation at 1.5x. | Parametric scenario generation with SLO-derived checks |
+| 01 | [**voice-robustness-testing-agent**](https://github.com/NathanMaine/voice-robustness-testing-agent) | Tests voice/NLU classifiers using structured test sets with pluggable classifier protocols. Regex keyword scoring with tie-breaking catches edge cases that unit tests miss. | 3-state outcome model (PASS / AMBIGUOUS / FAIL) |
+| 02 | [**architectural-design-review-agent**](https://github.com/NathanMaine/architectural-design-review-agent) | Ingests YAML architecture briefs and produces structured reviews via LLM with JSON schema extraction. Dual-mode operation runs with or without an API key. | SHA-256 brief content hashing for evidence integrity |
+| 03 | [**compliance-validation-agent**](https://github.com/NathanMaine/compliance-validation-agent) | Assesses whether a software change satisfies a compliance checklist. Category-aware keyword matching across 5 domains performs real analysis without requiring an LLM. | Real analysis in stub mode — no LLM required |
+| 04 | [**agent-perf-test-generator**](https://github.com/NathanMaine/agent-perf-test-generator) | Generates structured load test plans from service profiles. Three scenario patterns (steady, burst, soak) with automatic burst threshold relaxation at 1.5x. | Parametric scenario generation with SLO-derived checks |
 
 ### Documentation & Knowledge
 
 | # | Repository | What It Does | Distinguishing Feature |
 |---|---|---|---|
-| 05 | **living-docforce-agent** | Detects documentation drift by comparing entities from source code against docs. Multi-framework support (Flask + Express) with path normalization across conventions. | Version-aware endpoint drift detection — zero LLM dependency |
-| 06 | **meeting-memory-companion** | Extracts structured data from meeting notes and answers queries via cascading phrase-based classification across 6 categories with token-overlap scoring. | 6-category query classifier with evidence-backed responses |
+| 05 | [**living-docforce-agent**](https://github.com/NathanMaine/living-docforce-agent) | Detects documentation drift by comparing entities from source code against docs. Multi-framework support (Flask + Express) with path normalization across conventions. | Version-aware endpoint drift detection — zero LLM dependency |
+| 06 | [**meeting-memory-companion**](https://github.com/NathanMaine/meeting-memory-companion) | Extracts structured data from meeting notes and answers queries via cascading phrase-based classification across 6 categories with token-overlap scoring. | 6-category query classifier with evidence-backed responses |
 
 ### Operations & Intelligence
 
 | # | Repository | What It Does | Distinguishing Feature |
 |---|---|---|---|
-| 07 | **ai-ops-kpi-pipeline** | ETL pipeline that ingests KPI snapshots and produces aggregated reports. Suffix-based heuristics automatically classify columns — `_total` summed, `latency_` averaged. | Heuristic metric classification — zero external dependencies |
-| 08 | **devex-metrics-dashboard** | Evaluates 7 engineering health categories against DORA-aligned thresholds. Signal-counting aggregation prevents single-metric domination. | Signal-counting health aggregation across 7 categories |
+| 07 | [**ai-ops-kpi-pipeline**](https://github.com/NathanMaine/ai-ops-kpi-pipeline) | ETL pipeline that ingests KPI snapshots and produces aggregated reports. Suffix-based heuristics automatically classify columns — `_total` summed, `latency_` averaged. | Heuristic metric classification — zero external dependencies |
+| 08 | [**devex-metrics-dashboard**](https://github.com/NathanMaine/devex-metrics-dashboard) | Evaluates 7 engineering health categories against DORA-aligned thresholds. Signal-counting aggregation prevents single-metric domination. | Signal-counting health aggregation across 7 categories |
 
 ### Fairness & Governance
 
 | # | Repository | What It Does | Distinguishing Feature |
 |---|---|---|---|
-| 09 | **multi-agent-fairness-governor** | Allocates tasks using weighted round-robin with priority ordering and capacity constraints. Weight-expanded rotation ensures exact proportional distribution. | Fully deterministic — skew-ratio fairness metric |
+| 09 | [**multi-agent-fairness-governor**](https://github.com/NathanMaine/multi-agent-fairness-governor) | Allocates tasks using weighted round-robin with priority ordering and capacity constraints. Weight-expanded rotation ensures exact proportional distribution. | Fully deterministic — skew-ratio fairness metric |
 
 ---
 
@@ -127,28 +127,7 @@ These repos share a common philosophy:
 
 ## At a Glance
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│                    10 REPOS  ·  500+ TESTS                   │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  🛡️  governed-llm-gateway          Compliance-first gateway │
-│  🎙️  voice-robustness-testing      NLU classifier testing   │
-│  🏗️  architectural-design-review   Architecture brief review │
-│  ✅  compliance-validation          SDLC checklist assessment│
-│  📄  living-docforce                Documentation drift       │
-│  ⚡  agent-perf-test-generator      Load test plan generation │
-│  📊  ai-ops-kpi-pipeline            KPI aggregation pipeline │
-│  🧠  meeting-memory-companion       Meeting notes extraction │
-│  ⚖️  multi-agent-fairness-governor  Fair task allocation     │
-│  📈  devex-metrics-dashboard        DORA metrics engine      │
-│                                                              │
-├──────────────────────────────────────────────────────────────┤
-│  Python  ·  FastAPI  ·  Click CLI  ·  Zero black boxes       │
-└──────────────────────────────────────────────────────────────┘
-```
 
----
 
 
 ### 🎙️ Real-Time AI & Meeting Intelligence (5 Projects)
