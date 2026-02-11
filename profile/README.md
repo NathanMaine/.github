@@ -127,6 +127,26 @@ These repos share a common philosophy:
 
 ## At a Glance
 
+┌──────────────────────────────────────────────────────────────┐
+│                    10 REPOS  ·  500+ TESTS                   │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  🛡️  governed-llm-gateway          Compliance-first gateway  │
+│  🎙️  voice-robustness-testing      NLU classifier testing    │
+│  🏗️  architectural-design-review   Architecture brief review │
+│  ✅  compliance-validation          SDLC checklist assessment│
+│  📄  living-docforce                Documentation drift      │
+│  ⚡  agent-perf-test-generator      Load test plan generation │
+│  📊  ai-ops-kpi-pipeline            KPI aggregation pipeline │
+│  🧠  meeting-memory-companion       Meeting notes extraction │
+│  ⚖️  multi-agent-fairness-governor  Fair task allocation     │
+│  📈  devex-metrics-dashboard        DORA metrics engine      │
+│                                                              │
+├──────────────────────────────────────────────────────────────┤
+│  Python  ·  FastAPI  ·  Click CLI  ·  Zero black boxes       │
+└──────────────────────────────────────────────────────────────┘
+
+
 
 
 
