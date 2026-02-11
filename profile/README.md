@@ -150,7 +150,6 @@ These repos share a common philosophy:
 
 ---
 
-*Built by [Nathan Maine](https://github.com/NathanMaine) · © 2025 Memoriant, Inc.*
 
 ### 🎙️ Real-Time AI & Meeting Intelligence (5 Projects)
 
