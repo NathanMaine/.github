@@ -6,7 +6,7 @@
 [![Website](https://img.shields.io/badge/Website-000000?style=flat&logo=safari&logoColor=white)](https://nathanmaine.com)
 [![Podcast](https://img.shields.io/badge/Podcast-8B5CF6?style=flat&logo=spotify&logoColor=white)](https://podcast.nathanmaine.com)
 
-I build AI systems that solve the problems I've spent a career navigating — from identity platforms serving 700K users to data systems unifying 89M records across 28+ sources. I've led $20M+ portfolios at Salesforce with 5/5 CSAT and cut delivery cycles by 67%.
+I independently build AI systems that solve the problems I've spent a career navigating — from identity platforms serving 700K users to data systems unifying 89M records across 28+ sources. I've led $20M+ portfolios at Salesforce with 5/5 CSAT and cut delivery cycles by 67%.
 
 ---
 
@@ -26,7 +26,7 @@ Purpose-built agents spanning compliance, testing, fairness, documentation, and 
 
 ### The Flagship
 
-**[governed-llm-gateway](https://github.com/NathanMaine/governed-llm-gateway)** — Route LLM requests through a governed endpoint with SHA-256 hash-chain audit trails, Merkle tree verification, YAML policy-as-code enforcement, PII detection, and SOC 2 + HIPAA compliance evidence packages mapping 12 regulatory controls.
+**[governed-llm-gateway](https://github.com/NathanMaine/governed-llm-gateway)** — Route LLM requests through a governed endpoint with SHA-256 hash-chain audit trails, Merkle tree verification, YAML policy-as-code enforcement, PII detection, and SOC 2, HIPAA, and NIST 800-171 compliance evidence packages mapping 12+ regulatory controls.
 
 ### Testing & Validation
 
@@ -34,7 +34,7 @@ Purpose-built agents spanning compliance, testing, fairness, documentation, and 
 |---|---|---|
 | [voice-robustness-testing-agent](https://github.com/NathanMaine/voice-robustness-testing-agent) | Tests voice/NLU classifiers with pluggable protocols and regex keyword scoring | 3-state outcome model |
 | [architectural-design-review-agent](https://github.com/NathanMaine/architectural-design-review-agent) | YAML architecture briefs → structured LLM reviews with JSON schema extraction | SHA-256 evidence integrity |
-| [compliance-validation-agent](https://github.com/NathanMaine/compliance-validation-agent) | Assesses software changes against compliance checklists using category-aware keyword matching | Real analysis without LLM |
+| [compliance-validation-agent](https://github.com/NathanMaine/compliance-validation-agent) | Assesses software changes against multi-framework compliance checklists (SOX, SOC2, NIST, CMMC) using category-aware keyword matching | Real analysis without LLM |
 | [agent-perf-test-generator](https://github.com/NathanMaine/agent-perf-test-generator) | Generates load test plans (steady/burst/soak) from service profiles with SLO-derived checks | Auto burst threshold relaxation |
 
 ### Documentation & Knowledge
@@ -65,7 +65,7 @@ Production-grade tools for teams deploying AI agents in enterprise environments.
 
 | Tool | Problem It Solves |
 |------|-------------------|
-| [**Governance Graph Compiler**](https://github.com/NathanMaine/governance-graph-compiler) | Automates SOC2/SOX control-to-evidence traceability — replaces weeks of manual mapping |
+| [**Governance Graph Compiler**](https://github.com/NathanMaine/governance-graph-compiler) | Automates SOC2/SOX/NIST 800-171/CMMC control-to-evidence traceability — replaces weeks of manual mapping |
 | [**Agentic Evaluation Sandbox**](https://github.com/NathanMaine/agentic-evaluation-sandbox) | Regression testing for non-deterministic AI agents with scenario batteries and baselines |
 | [**Agentic Memory Graph Engine**](https://github.com/NathanMaine/agentic-memory-graph-engine) | Persistent, queryable agent memory using RAG and knowledge graphs |
 | [**Self-Healing Agentic Workflows**](https://github.com/NathanMaine/self-healing-agentic-workflows) | Automatic retries, fallback chains, and circuit breakers for AI pipelines |
@@ -139,6 +139,7 @@ Production-grade tools for teams deploying AI agents in enterprise environments.
 |--------|--------------|
 | **Data Platforms** | 89M records, 28+ sources, 95.48% match rates, 99% identity unification |
 | **Identity & Security** | 700K users, 200 application SSO, Okta/SAML/OIDC at scale |
+| **Compliance Frameworks** | SOX, SOC2, HIPAA, NIST 800-171, FedRAMP familiarity |
 | **Program Scale** | $20M+ portfolios, multi-cloud (Sales/Service/Data/Marketing Cloud) |
 | **Customer Outcomes** | 5/5 CSAT, "Excellent" on Risk Management and Communication |
 | **Process Optimization** | Cycle times cut from 6 weeks → 2 weeks (67% reduction) |
