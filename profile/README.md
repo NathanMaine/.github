@@ -14,7 +14,7 @@ I independently build AI systems that solve the problems I've spent a career nav
 
 | | Project | What It Does |
 |--|---------|--------------|
-| 🛡️ | [**CMMC Compliance AI Model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | Fine-tuned 7B LLM for CMMC/NIST 800-171 compliance — fully local, air-gap ready, 1-2 sec responses |
+| 🛡️ | [**CMMC Compliance AI Model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | Suite of 4 fine-tuned LLMs (7B–72B) for CMMC/NIST/HIPAA/DFARS compliance — fully local, air-gappable, zero cloud dependency |
 | 🚀 | [**Project Aurora Echo**](https://github.com/NathanMaine/Project-Aurora-Echo) | Real-time audio → transcription → reasoning → structured memory |
 | 🔒 | [**Governed LLM Gateway**](https://github.com/NathanMaine/governed-llm-gateway) | Compliance-first LLM gateway with tamper-evident audit trails and policy-as-code |
 | 🌿 | [**Agentforce Data-Aware Agent**](https://github.com/NathanMaine/Agentforce-Data-Aware-Agent) | Auto-discovers org schema → enforces FLS/sharing → runs safe Apex/Flow |
