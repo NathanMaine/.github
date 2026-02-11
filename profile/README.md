@@ -14,8 +14,9 @@ I independently build AI systems that solve the problems I've spent a career nav
 
 | | Project | What It Does |
 |--|---------|--------------|
+| 🛡️ | [**CMMC Compliance AI Model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | Fine-tuned 7B LLM for CMMC/NIST 800-171 compliance — fully local, air-gap ready, 1-2 sec responses |
 | 🚀 | [**Project Aurora Echo**](https://github.com/NathanMaine/Project-Aurora-Echo) | Real-time audio → transcription → reasoning → structured memory |
-| 🛡️ | [**Governed LLM Gateway**](https://github.com/NathanMaine/governed-llm-gateway) | Compliance-first LLM gateway with tamper-evident audit trails and policy-as-code |
+| 🔒 | [**Governed LLM Gateway**](https://github.com/NathanMaine/governed-llm-gateway) | Compliance-first LLM gateway with tamper-evident audit trails and policy-as-code |
 | 🌿 | [**Agentforce Data-Aware Agent**](https://github.com/NathanMaine/Agentforce-Data-Aware-Agent) | Auto-discovers org schema → enforces FLS/sharing → runs safe Apex/Flow |
 
 ---
@@ -139,7 +140,7 @@ Production-grade tools for teams deploying AI agents in enterprise environments.
 |--------|--------------|
 | **Data Platforms** | 89M records, 28+ sources, 95.48% match rates, 99% identity unification |
 | **Identity & Security** | 700K users, 200 application SSO, Okta/SAML/OIDC at scale |
-| **Compliance Frameworks** | SOX, SOC2, HIPAA, NIST 800-171, FedRAMP familiarity |
+| **Compliance Frameworks** | SOX, SOC2, HIPAA, NIST 800-171, CMMC, FedRAMP familiarity |
 | **Program Scale** | $20M+ portfolios, multi-cloud (Sales/Service/Data/Marketing Cloud) |
 | **Customer Outcomes** | 5/5 CSAT, "Excellent" on Risk Management and Communication |
 | **Process Optimization** | Cycle times cut from 6 weeks → 2 weeks (67% reduction) |
