@@ -6,7 +6,7 @@
 [![Website](https://img.shields.io/badge/Website-000000?style=flat&logo=safari&logoColor=white)](https://nathanmaine.com)
 [![Podcast](https://img.shields.io/badge/Podcast-8B5CF6?style=flat&logo=spotify&logoColor=white)](https://podcast.nathanmaine.com)
 
-I independently build AI systems that solve the problems I've spent a career navigating — from identity platforms serving 700K users to data systems unifying 89M records across 28+ sources. I've led $20M+ portfolios at Salesforce with 5/5 CSAT and cut delivery cycles by 67%.
+I independently build AI systems that solve the problems I've spent a career navigating — from identity platforms serving hundreds of thousands of users to data systems unifying tens of millions of records across 28+ sources. I've led $20M+ enterprise portfolios with perfect CSAT scores and cut delivery cycles by 67%.
 
 ---
 
@@ -138,11 +138,11 @@ Production-grade tools for teams deploying AI agents in enterprise environments.
 
 | Domain | Proof Points |
 |--------|--------------|
-| **Data Platforms** | 89M records, 28+ sources, 95.48% match rates, 99% identity unification |
-| **Identity & Security** | 700K users, 200 application SSO, Okta/SAML/OIDC at scale |
+| **Data Platforms** | Tens of millions of records, 28+ sources, 95.48% match rates, 99% identity unification |
+| **Identity & Security** | Hundreds of thousands of users, 200 application SSO, Okta/SAML/OIDC at scale |
 | **Compliance Frameworks** | SOX, SOC2, HIPAA, NIST 800-171, CMMC, FedRAMP familiarity |
-| **Program Scale** | $20M+ portfolios, multi-cloud (Sales/Service/Data/Marketing Cloud) |
-| **Customer Outcomes** | 5/5 CSAT, "Excellent" on Risk Management and Communication |
+| **Program Scale** | $20M+ enterprise portfolios, multi-cloud at scale |
+| **Customer Outcomes** | Perfect CSAT, "Excellent" on Risk Management and Communication |
 | **Process Optimization** | Cycle times cut from 6 weeks → 2 weeks (67% reduction) |
 
 **MIT** AI/ML Certificate (2024) · **Scrum Alliance** CSM · **Salesforce Certified:** Data Cloud Consultant · Administrator · AI Associate · Financial Services Cloud · Service Cloud · Sales Cloud
