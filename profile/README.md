@@ -7,13 +7,13 @@
 [![Website](https://img.shields.io/badge/Website-000000?style=flat&logo=safari&logoColor=white)](https://nathanmaine.com)
 [![Podcast](https://img.shields.io/badge/Podcast-8B5CF6?style=flat&logo=spotify&logoColor=white)](https://podcast.nathanmaine.com)
 
-I build the AI systems I've spent a career learning to manage — compliance LLMs, governed inference gateways, evaluation harnesses for autonomous agents, and patent-pending token governance infrastructure. 12 years enterprise delivery across identity platforms (700K users), data unification (89M records, 95.48% match rates), and $20M+ multi-cloud programs. 49 repos.
+I build the AI systems I've spent a career learning to manage — compliance LLMs, governed inference gateways, evaluation harnesses for autonomous agents, and patent-pending token governance infrastructure. 12 years enterprise delivery across identity platforms (700K users), data unification (89M records, 95.48% match rates), and $20M+ multi-cloud programs.
 
 ---
 
-## CMMC Expert Platform (v1.5.0)
+## CMMC Compliance AI Platform (v1.5.0)
 
-The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four models (7B–72B) trained for $77 total compute, deployed fully air-gapped via Ollama. The platform implements 27 CMMC controls across 5 families (AC, AU, IA, SC, SI) plus 3 DFARS clauses.
+The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four models (7B–72B) trained for $77 total compute, deployed fully air-gapped via Ollama. 690 tests across three tiers. 27 CMMC controls across 5 families (AC, AU, IA, SC, SI) plus 3 DFARS clauses.
 
 | Model | Size | HuggingFace |
 |-------|------|-------------|
@@ -22,123 +22,100 @@ The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four m
 | cmmc-expert-32b | 18.5 GB | [Nathan-Maine/cmmc-expert-32b](https://huggingface.co/Nathan-Maine/cmmc-expert-32b) |
 | cmmc-expert-72b | 44.2 GB | [Nathan-Maine/cmmc-expert-72b](https://huggingface.co/Nathan-Maine/cmmc-expert-72b) |
 
-**690 total tests** across a three-tier architecture (550 internal + 140 Dark Factory behavioral scenarios):
-
-| Repository | What It Does | Tests |
-|------------|-------------|-------|
-| [**governed-llm-gateway**](https://github.com/NathanMaine/governed-llm-gateway) | SHA-256 hash-chain audit trails, YAML policy-as-code, PII/CUI detection, compliance evidence export | 134 passing |
-| [**cmmc-compliance-ai-model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | The 4 fine-tuned models + training pipeline | Published on HuggingFace |
-| [**garak-compliance-probes**](https://github.com/NathanMaine/garak-compliance-probes) | Adversarial probes for NVIDIA garak ([PR #1619](https://github.com/NVIDIA/garak/pull/1619) — 20 files, 1,599 lines) | Contributed upstream |
-| [**garak**](https://github.com/NathanMaine/garak) | Fork of NVIDIA/garak with compliance probe development branch | PR source |
-
-The governed-llm-gateway is the only LLM gateway with tamper-evident audit trails (SHA-256 hash-chain), policy-as-code enforcement, and built-in PII/CUI detection — capabilities absent from LiteLLM, Portkey, and TensorZero. Every user message traverses an 11-step audited inference pipeline enforced by code, not configuration.
+| Repository | Problem It Solves | How It Works |
+|---|---|---|
+| [**governed-llm-gateway**](https://github.com/NathanMaine/governed-llm-gateway) | Commercial AI gateways log to editable databases — useless for compliance audits | Every AI request passes through an 11-step pipeline that logs who asked what, blocks sensitive data, and chains each entry to the previous one using SHA-256 hashes — any tampering breaks the chain |
+| [**cmmc-compliance-ai-model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | CMMC compliance consultants cost $125K–$250K and no open-source AI alternative exists | Four AI models fine-tuned on government compliance documents, sized from fast lookups (7B) to deep multi-framework analysis (72B), running entirely on local hardware with zero cloud dependency |
+| [**garak-compliance-probes**](https://github.com/NathanMaine/garak-compliance-probes) | Standard AI vulnerability scanners don't test whether models leak regulated data like CUI, HIPAA, or DFARS content | Four custom probes and six detectors for NVIDIA's garak scanner that specifically try to trick compliance models into revealing controlled information. [PR #1619](https://github.com/NVIDIA/garak/pull/1619) — 20 files, 1,599 lines. [Dev fork](https://github.com/NathanMaine/garak) |
+| [**governance-graph-compiler**](https://github.com/NathanMaine/governance-graph-compiler) | Compliance policies written in documents are hard to trace and enforce with software | Reads policy Markdown files and converts them into a connected graph where each requirement links to its evidence artifacts and enforcement points |
 
 ---
 
-## Dark Factory Testing & Agentic Evaluation
+## AI Agent Evaluation & Dark Factory Testing
 
-**140 black-box behavioral scenarios** in a physically separate holdout repository. The AI agents that build the platform never see these tests — an agent cannot game what it cannot see. Docker digital twin with mock Ollama for deterministic, zero-GPU execution. Latest sweep: 130 passed, 3 real platform findings discovered.
+140 black-box behavioral scenarios in a physically separate holdout repository — the AI that builds the platform never sees the tests. An agent cannot game what it cannot see. This architecture independently converged with [StrongDM's Software Factory](https://factory.strongdm.ai) pattern (published February 2026). The [Agentic Evaluation Sandbox](https://github.com/NathanMaine/agentic-evaluation-sandbox) was created **December 2025**, predating their publication.
 
-This architecture independently converged with [StrongDM's Software Factory](https://factory.strongdm.ai) pattern (published February 2026). The [Agentic Evaluation Sandbox](https://github.com/NathanMaine/agentic-evaluation-sandbox) formalizing this pattern was created **December 2025**, predating their publication.
-
-| Repository | What It Does |
-|------------|-------------|
-| [**agentic-evaluation-sandbox**](https://github.com/NathanMaine/agentic-evaluation-sandbox) | Holdout scenario evaluator — Doer/Judge/Adversary/Observer roles, probabilistic scoring, append-only audit trails. Created Dec 2025. |
-| [**governance-graph-compiler**](https://github.com/NathanMaine/governance-graph-compiler) | Policy Markdown → directed acyclic graph for compliance traceability |
-
-**Run the full suite:** [agentic-ai-portfolio](https://github.com/NathanMaine/agentic-ai-portfolio) — AES · GGC · AMG · SHAW · TEA
+| Repository | Problem It Solves | How It Works |
+|---|---|---|
+| [**agentic-evaluation-sandbox**](https://github.com/NathanMaine/agentic-evaluation-sandbox) | AI agents can learn to game their own tests when the tests live inside the codebase | Stores test scenarios in a separate location the AI never sees, then runs them through four roles — Doer, Judge, Adversary, Observer — with probabilistic scoring instead of simple pass/fail |
+| [**agentic-ai-portfolio**](https://github.com/NathanMaine/agentic-ai-portfolio) | Five independent agent repos need a single entry point for orchestration and documentation | Umbrella repository tying together AES, GGC, AMG, SHAW, and TEA with shared configuration and docs |
+| [**voice-robustness-testing-agent**](https://github.com/NathanMaine/voice-robustness-testing-agent) | Voice assistants and NLU classifiers break under noisy or unusual input — failures need to be found before users find them | Injects noise, varied phrasing, and edge cases into voice endpoints, classifies each response into three outcome states, and generates a robustness report with evidence |
+| [**agent-perf-test-generator**](https://github.com/NathanMaine/agent-perf-test-generator) | Writing load test plans for steady traffic, burst traffic, and endurance runs is repetitive and error-prone | Takes a service profile and SLO targets as input, then generates ready-to-run test configurations with pass/fail thresholds derived directly from the SLOs |
+| [**semantic-test-coverage-agent**](https://github.com/NathanMaine/semantic-test-coverage-agent) | Line coverage numbers don't tell you whether every function's actual behavior is tested | Walks the code's syntax tree to find every function, matches each one against existing test files, and generates skeleton tests for anything that's untested |
 
 ---
 
-## Deterministic Agent Suite
+## Agent Infrastructure
 
-Purpose-built agents using deterministic, auditable logic — identical inputs always produce identical outputs. Zero black boxes.
+Purpose-built components for agent memory, recovery, planning, and coordination. Deterministic and auditable — identical inputs always produce identical outputs.
 
-### Testing & Validation
-
-| Repository | What It Does | Key Feature |
+| Repository | Problem It Solves | How It Works |
 |---|---|---|
-| [voice-robustness-testing-agent](https://github.com/NathanMaine/voice-robustness-testing-agent) | Tests voice/NLU classifiers with pluggable protocols | 3-state outcome model |
-| [architectural-design-review-agent](https://github.com/NathanMaine/architectural-design-review-agent) | YAML architecture briefs → structured LLM reviews | SHA-256 evidence integrity |
-| [compliance-validation-agent](https://github.com/NathanMaine/compliance-validation-agent) | Multi-framework compliance checklists (SOX, SOC2, NIST, CMMC) | Zero LLM dependency |
-| [agent-perf-test-generator](https://github.com/NathanMaine/agent-perf-test-generator) | Load test plans (steady/burst/soak) from service profiles | SLO-derived checks |
-
-### Memory, Planning & Recovery
-
-| Repository | What It Does | Key Feature |
-|---|---|---|
-| [agentic-memory-graph-engine](https://github.com/NathanMaine/agentic-memory-graph-engine) | Persistent, queryable agent memory using RAG + knowledge graphs | explain() paths |
-| [self-healing-agentic-workflows](https://github.com/NathanMaine/self-healing-agentic-workflows) | Automatic retries, fallback chains, circuit breakers | Deterministic recovery |
-| [temporal-executive-agent](https://github.com/NathanMaine/temporal-executive-agent) | Dependency-ordered planning with state tracking | Temporal planning |
-| [multi-agent-fairness-governor](https://github.com/NathanMaine/multi-agent-fairness-governor) | Weighted round-robin task allocation with capacity constraints | Skew-ratio metric |
-
-### Documentation & Operations
-
-| Repository | What It Does | Key Feature |
-|---|---|---|
-| [living-docforce-agent](https://github.com/NathanMaine/living-docforce-agent) | Detects documentation drift across Flask + Express | Version-aware |
-| [meeting-memory-companion](https://github.com/NathanMaine/meeting-memory-companion) | Extracts structured meeting data via 6-category classification | Token-overlap scoring |
-| [ai-ops-kpi-pipeline](https://github.com/NathanMaine/ai-ops-kpi-pipeline) | ETL with suffix-based heuristic aggregation | Zero dependencies |
-| [devex-metrics-dashboard](https://github.com/NathanMaine/devex-metrics-dashboard) | 7 DORA-aligned health categories | Signal-counting aggregation |
-| [agent-zero-dashboard](https://github.com/NathanMaine/agent-zero-dashboard) | Monitoring dashboard for Agent Zero autonomous AI framework | Real-time state visualization |
+| [**agentic-memory-graph-engine**](https://github.com/NathanMaine/agentic-memory-graph-engine) | AI agents forget what happened in previous tasks — they have no persistent, queryable memory | Stores facts and relationships in a knowledge graph, retrieves relevant memories using similarity search, and can explain why it recalled something by tracing the graph path |
+| [**self-healing-agentic-workflows**](https://github.com/NathanMaine/self-healing-agentic-workflows) | When an AI agent fails mid-task, most systems just crash instead of recovering | Wraps agent tasks in retry logic with exponential backoff, fallback chains (try Plan B if Plan A fails), and circuit breakers that stop calling a broken service |
+| [**temporal-executive-agent**](https://github.com/NathanMaine/temporal-executive-agent) | Complex tasks have dependencies — step A must finish before step B can start — and agents often ignore this | Builds a dependency graph of subtasks, resolves ordering constraints, and executes them in valid sequence while tracking state at each step |
+| [**multi-agent-fairness-governor**](https://github.com/NathanMaine/multi-agent-fairness-governor) | When multiple agents compete for tasks, some get overloaded while others sit idle | Coordinates agents using weighted round-robin allocation with capacity constraints and a skew-ratio metric that detects and corrects workload imbalance |
+| [**agentic-workflow-simplifier**](https://github.com/NathanMaine/agentic-workflow-simplifier) | Defining multi-agent workflows usually requires heavy frameworks with steep learning curves | Lightweight Python library that lets you define workflows as directed graphs with automatic dependency resolution and feedback loops |
+| [**mcp-conversational-data-agent**](https://github.com/NathanMaine/mcp-conversational-data-agent) | LLMs can't natively query databases or CRM systems during a conversation | Model Context Protocol server that exposes database, CRM, and ticket system tools so an LLM can query structured data through natural language |
 
 ---
-
-## Additional Projects
 
 <details>
-<summary><strong>Real-Time AI & Meeting Intelligence</strong> (5 projects)</summary>
+<summary><strong>Developer Experience & Operations</strong> (8 projects)</summary>
 
-| Project | Description |
-|---------|-------------|
-| [Project Aurora Echo](https://github.com/NathanMaine/Project-Aurora-Echo) | Real-time meeting copilot (FastAPI + WebSocket + faster-whisper) |
-| [Aurora Echo v2.0](https://github.com/NathanMaine/Project-Aurora-Echo-v2.0) | NVIDIA-accelerated variant |
-| [FastAPI Assistant v3](https://github.com/NathanMaine/realtime-ai-assistant003-fast-api) | GPU-accelerated backend |
-| [Streamlit Assistant v4](https://github.com/NathanMaine/realtime-ai-assistant004-stream-lit) | Streamlit + ASR |
-| [Realtime AI Assistant](https://github.com/NathanMaine/realtime-ai-assistant) | FastAPI template |
+| Repository | Problem It Solves | How It Works |
+|---|---|---|
+| [**architectural-design-review-agent**](https://github.com/NathanMaine/architectural-design-review-agent) | Architecture reviews are inconsistent — different reviewers check different things | Accepts YAML architecture briefs, runs them through an LLM, and generates structured reviews with risk assessments, open questions, and checklists. Includes stub mode for testing without an LLM |
+| [**living-docforce-agent**](https://github.com/NathanMaine/living-docforce-agent) | Documentation goes stale the moment code changes — nobody notices until it's already wrong | Compares code and config files against their corresponding docs, labels each gap by severity, and logs evidence of every drift it finds |
+| [**meeting-memory-companion**](https://github.com/NathanMaine/meeting-memory-companion) | Meeting notes are unstructured text — you can't search "who owns action item X?" without reading everything | Extracts attendees, decisions, and action items from raw meeting notes using 6-category classification into a structured, queryable record |
+| [**devex-metrics-dashboard**](https://github.com/NathanMaine/devex-metrics-dashboard) | Teams can't see their developer experience health at a glance — they rely on gut feel | Ingests delivery signals (build times, PR cycle time, incident counts) and computes 7 DORA-aligned health indicators with a compact status snapshot |
+| [**devex-env-bootstrap-agent**](https://github.com/NathanMaine/devex-env-bootstrap-agent) | New developers waste days setting up their local environment because setup docs are stale or missing | Scans the project folder, detects languages and dependencies, and generates a bootstrap script plus onboarding checklist automatically |
+| [**ai-ops-kpi-pipeline**](https://github.com/NathanMaine/ai-ops-kpi-pipeline) | AI operations metrics are scattered across tools with no unified view | ETL pipeline that ingests KPI snapshots from multiple sources, aggregates them using suffix-based heuristics, and produces a single evidence-backed report |
+| [**ai-deployment-experience-bot**](https://github.com/NathanMaine/ai-deployment-experience-bot) | Developers switch between Slack and deployment dashboards to trigger deploys and check status | Slack bot that lets developers trigger deployments, rollbacks, and status checks via simple chat commands without leaving the conversation |
+| [**agent-zero-dashboard**](https://github.com/NathanMaine/agent-zero-dashboard) | Agent Zero's autonomous tasks run in the background with no visibility into what it's doing or why | Real-time monitoring dashboard that visualizes Agent Zero's current state, task queue, and execution history |
+
+</details>
+
+<details>
+<summary><strong>Real-Time AI & Meeting Intelligence</strong> (6 projects)</summary>
+
+| Repository | Problem It Solves | How It Works |
+|---|---|---|
+| [**Project-Aurora-Echo**](https://github.com/NathanMaine/Project-Aurora-Echo) | Meetings produce hours of audio — decisions and action items get lost because nobody re-listens | Captures audio in real time, transcribes with faster-whisper, identifies who said what via speaker diarization, and generates structured summaries through an LLM. [v2.0](https://github.com/NathanMaine/Project-Aurora-Echo-v2.0) adds NVIDIA GPU acceleration |
+| [**realtime-ai-assistant**](https://github.com/NathanMaine/realtime-ai-assistant) | Same core problem — exploring different architectures for live meeting transcription and summarization | Evolved through four iterations: [vanilla Python](https://github.com/NathanMaine/realtime-ai-assistant) → [improved pipeline](https://github.com/NathanMaine/realtime-ai-assistant002) → [FastAPI + WebSocket](https://github.com/NathanMaine/realtime-ai-assistant003-fast-api) → [Streamlit UI](https://github.com/NathanMaine/realtime-ai-assistant004-stream-lit), each using xAI Grok for live summarization |
 
 </details>
 
 <details>
 <summary><strong>Salesforce / Agentforce</strong> (3 projects)</summary>
 
-| Project | Description |
-|---------|-------------|
-| [Agentforce Data-Aware Agent](https://github.com/NathanMaine/Agentforce-Data-Aware-Agent) | Auto-discovers org schema → enforces FLS/sharing → runs safe Apex/Flow |
-| [Dynamic Action](https://github.com/NathanMaine/Agentforce-Dynamic-Action) | Natural language → generated Apex actions |
-| [Dynamic Action (Invocable)](https://github.com/NathanMaine/Agentforce-Dynamic-Action-Invocable) | Flow-compatible action generator |
+| Repository | Problem It Solves | How It Works |
+|---|---|---|
+| [**Agentforce-Data-Aware-Agent**](https://github.com/NathanMaine/Agentforce-Data-Aware-Agent) | Salesforce AI agents can access org data without respecting field-level security or sharing rules — a compliance risk | Auto-discovers the org schema (objects, fields, relationships), enforces FLS and sharing rules, then runs safe actions (SOQL, Flow, Apex) within those boundaries |
+| [**Agentforce-Dynamic-Action**](https://github.com/NathanMaine/Agentforce-Dynamic-Action) | Every new Salesforce agent capability requires manually writing Apex code | Takes a natural-language goal description and generates working Apex code on the fly to execute it |
+| [**Agentforce-Dynamic-Action-Invocable**](https://github.com/NathanMaine/Agentforce-Dynamic-Action-Invocable) | The Dynamic Action pattern needs to work inside Salesforce Flows, Einstein Copilot, and REST — not just standalone | Invocable wrapper that exposes the dynamic action generator to Flow, Einstein Copilot, and REST endpoints |
 
 </details>
 
 <details>
-<summary><strong>Classical AI & Other</strong> (7 projects)</summary>
+<summary><strong>Classical AI & Side Projects</strong> (7 projects)</summary>
 
-| Project | Description |
-|---------|-------------|
-| [Backward-Chaining Engine](https://github.com/NathanMaine/LISP-Backward-Chaining-Core-Engine) | Goal-driven inference (Common Lisp) |
-| [Car Expert System](https://github.com/NathanMaine/lisp-car-expert-system) | Rule-based troubleshooting (Common Lisp) |
-| [Chess Analyzer v2](https://github.com/NathanMaine/Chess-Analyzer-v2) | Web-based PGN analysis (React + TypeScript) |
-| [Chess Analyzer](https://github.com/NathanMaine/chess-analyzer) | PGN parsing engine (Python + Stockfish) |
-| [Thermomix Recipe Genius](https://github.com/NathanMaine/Thermomix-Recipe-Genius) | AI recipe generator (Next.js + FastAPI) |
-| [Bongo Cat Monitor](https://github.com/NathanMaine/bongo_cat_monitor_remix) | ESP32 desk companion with TFT display |
-| [GitHub Avatar Rotator](https://github.com/NathanMaine/Github-Avatar-Rotator) | Automated GitHub avatar rotation |
+| Repository | Problem It Solves | How It Works |
+|---|---|---|
+| [**LISP-Backward-Chaining-Core-Engine**](https://github.com/NathanMaine/LISP-Backward-Chaining-Core-Engine) | Modern AI is all neural nets — classic rule-based reasoning that can explain its conclusions is underrepresented | Common Lisp expert system that works backward from a goal, checking rules and facts until it can prove or disprove the goal, with certainty scores on every conclusion |
+| [**lisp-car-expert-system**](https://github.com/NathanMaine/lisp-car-expert-system) | Demonstrating practical symbolic AI with a real-world application and a complete dev environment | Rule-based car troubleshooting system with a forward chaining inference engine — starts from symptoms and fires rules until it reaches a diagnosis. Includes VS Code + SBCL setup |
+| [**Chess-Analyzer-v2**](https://github.com/NathanMaine/Chess-Analyzer-v2) | Analyzing chess games online means switching between multiple tools and sites | React + TypeScript web app that imports Chess.com games, runs in-browser move analysis, and shows performance trends on interactive dashboards |
+| [**chess-analyzer**](https://github.com/NathanMaine/chess-analyzer) | Desktop chess analysis with deeper engine integration and multi-provider AI commentary | Cross-platform Python app with Stockfish evaluation, AI-generated move explanations (why was that move bad?), and batch game processing |
+| [**Thermomix-Recipe-Genius**](https://github.com/NathanMaine/Thermomix-Recipe-Genius) | Thermomix TM6 recipes need exact weight-based measurements that regular recipes don't provide | React + TypeScript frontend that uses Google Gemini and xAI Grok to generate and convert weight-based Thermomix recipes |
+| [**bongo_cat_monitor_remix**](https://github.com/NathanMaine/bongo_cat_monitor_remix) | System monitoring is boring — why not make it fun with an animated desk companion? | ESP32 microcontroller with TFT display: animated Bongo Cat that reacts to CPU usage, RAM, and typing speed, plus meme triggers and Imgflip integration |
+| [**Github-Avatar-Rotator**](https://github.com/NathanMaine/Github-Avatar-Rotator) | GitHub avatars get stale — automating rotation keeps the profile fresh | Script that cycles through a set of avatar images using the GitHub API on a schedule |
 
 </details>
 
 ---
 
-## Background
-
-| Domain | Proof Points |
-|--------|--------------|
-| **Data Platforms** | 89M records → 45.9M unified profiles, 95.48% match rate, 99% identity unification |
-| **Identity & Security** | 700,000-user Okta deployment, 200 application SSO (SAML/OIDC) |
-| **Compliance** | SOX, SOC2, HIPAA, NIST 800-171, CMMC, FedRAMP adjacency |
-| **Program Delivery** | $20M+ multi-cloud portfolios, 5/5 CSAT, "Excellent" risk management |
-| **Process** | 6 weeks → 2 weeks onboarding cycle (67% reduction) |
+Plus 8 private repositories covering compliance training data pipelines, SDLC validation, architecture review, and load testing infrastructure.
 
 **MIT** AI/ML Certificate · **Salesforce:** Data Cloud Consultant · Administrator · AI Associate · **Scrum:** CSM
-
----
 
 nmaine@gmail.com · [LinkedIn](https://www.linkedin.com/in/nathanmaine) · [nathanmaine.com](https://nathanmaine.com) · [HuggingFace](https://huggingface.co/Nathan-Maine)
