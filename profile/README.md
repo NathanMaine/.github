@@ -13,7 +13,7 @@ I build the AI systems I've spent a career learning to manage — compliance LLM
 
 ## CMMC Expert Platform (v1.5.0)
 
-The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four QLoRA models on Qwen2.5-Instruct, trained for $77 total compute, deployed fully air-gapped via Ollama. The platform implements 27 CMMC controls across 5 families (AC, AU, IA, SC, SI) plus 3 DFARS clauses.
+The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four models (7B–72B) trained for $77 total compute, deployed fully air-gapped via Ollama. The platform implements 27 CMMC controls across 5 families (AC, AU, IA, SC, SI) plus 3 DFARS clauses.
 
 | Model | Size | HuggingFace |
 |-------|------|-------------|
