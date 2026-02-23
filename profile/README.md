@@ -1,78 +1,84 @@
 # Nathan Maine
 
-**Senior Technical Program Manager · AI Systems Builder · Enterprise Delivery**
+**Founder, Memoriant Inc. | Senior TPM at Salesforce | Patent-Pending AI Infrastructure**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nathanmaine)
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=flat&logo=huggingface&logoColor=black)](https://huggingface.co/Nathan-Maine)
 [![Website](https://img.shields.io/badge/Website-000000?style=flat&logo=safari&logoColor=white)](https://nathanmaine.com)
 [![Podcast](https://img.shields.io/badge/Podcast-8B5CF6?style=flat&logo=spotify&logoColor=white)](https://podcast.nathanmaine.com)
 
-I independently build AI systems that solve the problems I've spent a career navigating — from identity platforms serving hundreds of thousands of users to data systems unifying tens of millions of records across 28+ sources. I've led $20M+ enterprise portfolios with perfect CSAT scores and cut delivery cycles by 67%.
+I build AI systems for regulated industries — compliance LLMs, governed inference gateways, and evaluation harnesses for autonomous agents. I also manage $20M+ enterprise programs at Salesforce. 12 years delivery, 46 repos.
+
+**Memoriant Inc.** is a Delaware C Corporation building air-gapped compliance AI for the Defense Industrial Base. Patent-pending token governance infrastructure. NASA commitment letter.
 
 ---
 
-## Start Here
+## Flagship: CMMC Expert
 
-| | Project | What It Does |
-|--|---------|--------------|
-| 🛡️ | [**CMMC Compliance AI Model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | Suite of 4 fine-tuned LLMs (7B–72B) for CMMC/NIST/HIPAA/DFARS compliance — fully local, air-gappable, zero cloud dependency |
-| 🚀 | [**Project Aurora Echo**](https://github.com/NathanMaine/Project-Aurora-Echo) | Real-time audio → transcription → reasoning → structured memory |
-| 🔒 | [**Governed LLM Gateway**](https://github.com/NathanMaine/governed-llm-gateway) | Compliance-first LLM gateway with tamper-evident audit trails and policy-as-code |
-| 🌿 | [**Agentforce Data-Aware Agent**](https://github.com/NathanMaine/Agentforce-Data-Aware-Agent) | Auto-discovers org schema → enforces FLS/sharing → runs safe Apex/Flow |
+The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four QLoRA models on Qwen2.5-Instruct, trained for $77 total compute, deployed fully air-gapped via Ollama.
+
+| Model | Size | HuggingFace |
+|-------|------|-------------|
+| cmmc-expert-7b | 5.1 GB | [Nathan-Maine/cmmc-expert-7b](https://huggingface.co/Nathan-Maine/cmmc-expert-7b) |
+| cmmc-expert-14b | ~10 GB | [Nathan-Maine/cmmc-expert-14b](https://huggingface.co/Nathan-Maine/cmmc-expert-14b) |
+| cmmc-expert-32b | 18.5 GB | [Nathan-Maine/cmmc-expert-32b](https://huggingface.co/Nathan-Maine/cmmc-expert-32b) |
+| cmmc-expert-72b | 44.2 GB | [Nathan-Maine/cmmc-expert-72b](https://huggingface.co/Nathan-Maine/cmmc-expert-72b) |
+
+13,434 training examples from 5 government sources. Frameworks: CMMC 2.0, NIST 800-171 Rev 2/3, 800-53 Rev 5, HIPAA, DFARS.
+
+| Repository | What It Does | Tests |
+|------------|-------------|-------|
+| [**cmmc-compliance-ai-model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | The 4 fine-tuned models + training pipeline | Published on HuggingFace |
+| [**governed-llm-gateway**](https://github.com/NathanMaine/governed-llm-gateway) | SHA-256 hash-chain audit trails, YAML policy-as-code, PII detection | 103/103 passing |
+| [**garak-compliance-probes**](https://github.com/NathanMaine/garak-compliance-probes) | Adversarial probes for NVIDIA garak (PR #1619 — 20 files, 1,599 lines) | Contributed upstream |
 
 ---
 
-## AI Agent Research — 10 Deterministic Agents
+## Agentic Evaluation Sandbox
 
-Purpose-built agents spanning compliance, testing, fairness, documentation, and operational intelligence. Every repo uses deterministic, auditable logic — identical inputs always produce identical outputs. Zero black boxes.
+Holdout scenario evaluation harness for AI agents. Created **December 16, 2025**.
 
-### The Flagship
+Scenarios are stored *outside* the codebase — agents can't game what they can't see. The architecture uses Doer / Judge / Adversary / Observer roles with probabilistic satisfaction scoring (threshold ≥ 0.85) and append-only JSONL audit trails with integrity hashes.
 
-**[governed-llm-gateway](https://github.com/NathanMaine/governed-llm-gateway)** — Route LLM requests through a governed endpoint with SHA-256 hash-chain audit trails, Merkle tree verification, YAML policy-as-code enforcement, PII detection, and SOC 2, HIPAA, and NIST 800-171 compliance evidence packages mapping 12+ regulatory controls.
+| Repository | What It Does |
+|------------|-------------|
+| [**agentic-evaluation-sandbox**](https://github.com/NathanMaine/agentic-evaluation-sandbox) | Holdout scenario evaluator with 4-role architecture |
+| [**governance-graph-compiler**](https://github.com/NathanMaine/governance-graph-compiler) | Policy Markdown → directed acyclic graph for compliance traceability |
+
+**Run the full suite:** [agentic-ai-portfolio](https://github.com/NathanMaine/agentic-ai-portfolio) — AES · GGC · AMG · SHAW · TEA
+
+---
+
+## Deterministic Agent Suite
+
+Purpose-built agents using deterministic, auditable logic — identical inputs always produce identical outputs. Zero black boxes.
 
 ### Testing & Validation
 
 | Repository | What It Does | Key Feature |
 |---|---|---|
-| [voice-robustness-testing-agent](https://github.com/NathanMaine/voice-robustness-testing-agent) | Tests voice/NLU classifiers with pluggable protocols and regex keyword scoring | 3-state outcome model |
-| [architectural-design-review-agent](https://github.com/NathanMaine/architectural-design-review-agent) | YAML architecture briefs → structured LLM reviews with JSON schema extraction | SHA-256 evidence integrity |
-| [compliance-validation-agent](https://github.com/NathanMaine/compliance-validation-agent) | Assesses software changes against multi-framework compliance checklists (SOX, SOC2, NIST, CMMC) using category-aware keyword matching | Real analysis without LLM |
-| [agent-perf-test-generator](https://github.com/NathanMaine/agent-perf-test-generator) | Generates load test plans (steady/burst/soak) from service profiles with SLO-derived checks | Auto burst threshold relaxation |
+| [voice-robustness-testing-agent](https://github.com/NathanMaine/voice-robustness-testing-agent) | Tests voice/NLU classifiers with pluggable protocols | 3-state outcome model |
+| [architectural-design-review-agent](https://github.com/NathanMaine/architectural-design-review-agent) | YAML architecture briefs → structured LLM reviews | SHA-256 evidence integrity |
+| [compliance-validation-agent](https://github.com/NathanMaine/compliance-validation-agent) | Multi-framework compliance checklists (SOX, SOC2, NIST, CMMC) | Zero LLM dependency |
+| [agent-perf-test-generator](https://github.com/NathanMaine/agent-perf-test-generator) | Load test plans (steady/burst/soak) from service profiles | SLO-derived checks |
 
-### Documentation & Knowledge
-
-| Repository | What It Does | Key Feature |
-|---|---|---|
-| [living-docforce-agent](https://github.com/NathanMaine/living-docforce-agent) | Detects documentation drift across Flask + Express with path normalization | Version-aware, zero LLM dependency |
-| [meeting-memory-companion](https://github.com/NathanMaine/meeting-memory-companion) | Extracts structured meeting data and answers queries via 6-category classification | Token-overlap scoring with evidence |
-
-### Operations & Intelligence
+### Memory, Planning & Recovery
 
 | Repository | What It Does | Key Feature |
 |---|---|---|
-| [ai-ops-kpi-pipeline](https://github.com/NathanMaine/ai-ops-kpi-pipeline) | ETL pipeline with suffix-based heuristic aggregation (totals summed, latency averaged) | Zero external dependencies |
-| [devex-metrics-dashboard](https://github.com/NathanMaine/devex-metrics-dashboard) | 7 DORA-aligned health categories with signal-counting aggregation | Prevents single-metric domination |
+| [agentic-memory-graph-engine](https://github.com/NathanMaine/agentic-memory-graph-engine) | Persistent, queryable agent memory using RAG + knowledge graphs | explain() paths |
+| [self-healing-agentic-workflows](https://github.com/NathanMaine/self-healing-agentic-workflows) | Automatic retries, fallback chains, circuit breakers | Deterministic recovery |
+| [temporal-executive-agent](https://github.com/NathanMaine/temporal-executive-agent) | Dependency-ordered planning with state tracking | Temporal planning |
+| [multi-agent-fairness-governor](https://github.com/NathanMaine/multi-agent-fairness-governor) | Weighted round-robin task allocation with capacity constraints | Skew-ratio metric |
 
-### Fairness & Governance
+### Documentation & Operations
 
 | Repository | What It Does | Key Feature |
 |---|---|---|
-| [multi-agent-fairness-governor](https://github.com/NathanMaine/multi-agent-fairness-governor) | Weighted round-robin task allocation with priority ordering and capacity constraints | Fully deterministic, skew-ratio metric |
-
----
-
-## Enterprise AI Toolkit
-
-Production-grade tools for teams deploying AI agents in enterprise environments.
-
-| Tool | Problem It Solves |
-|------|-------------------|
-| [**Governance Graph Compiler**](https://github.com/NathanMaine/governance-graph-compiler) | Automates SOC2/SOX/NIST 800-171/CMMC control-to-evidence traceability — replaces weeks of manual mapping |
-| [**Agentic Evaluation Sandbox**](https://github.com/NathanMaine/agentic-evaluation-sandbox) | Regression testing for non-deterministic AI agents with scenario batteries and baselines |
-| [**Agentic Memory Graph Engine**](https://github.com/NathanMaine/agentic-memory-graph-engine) | Persistent, queryable agent memory using RAG and knowledge graphs |
-| [**Self-Healing Agentic Workflows**](https://github.com/NathanMaine/self-healing-agentic-workflows) | Automatic retries, fallback chains, and circuit breakers for AI pipelines |
-| [**Temporal Executive Agent**](https://github.com/NathanMaine/temporal-executive-agent) | Temporal planning by dependencies and due dates → plan + state |
-
-**Run the whole suite:** [agentic-ai-portfolio](https://github.com/NathanMaine/agentic-ai-portfolio) — aes · ggc · amg · shaw · tea
+| [living-docforce-agent](https://github.com/NathanMaine/living-docforce-agent) | Detects documentation drift across Flask + Express | Version-aware |
+| [meeting-memory-companion](https://github.com/NathanMaine/meeting-memory-companion) | Extracts structured meeting data via 6-category classification | Token-overlap scoring |
+| [ai-ops-kpi-pipeline](https://github.com/NathanMaine/ai-ops-kpi-pipeline) | ETL with suffix-based heuristic aggregation | Zero dependencies |
+| [devex-metrics-dashboard](https://github.com/NathanMaine/devex-metrics-dashboard) | 7 DORA-aligned health categories | Signal-counting aggregation |
 
 ---
 
@@ -83,11 +89,11 @@ Production-grade tools for teams deploying AI agents in enterprise environments.
 
 | Project | Description |
 |---------|-------------|
-| [Project Aurora Echo](https://github.com/NathanMaine/Project-Aurora-Echo) | Real-time meeting copilot |
-| [Realtime AI Assistant](https://github.com/NathanMaine/realtime-ai-assistant) | FastAPI template |
+| [Project Aurora Echo](https://github.com/NathanMaine/Project-Aurora-Echo) | Real-time meeting copilot (FastAPI + WebSocket + faster-whisper) |
+| [Aurora Echo v2.0](https://github.com/NathanMaine/Project-Aurora-Echo-v2.0) | Enhanced variant |
+| [FastAPI Assistant v3](https://github.com/NathanMaine/realtime-ai-assistant003-fast-api) | GPU-accelerated backend |
 | [Streamlit Assistant v4](https://github.com/NathanMaine/realtime-ai-assistant004-stream-lit) | Streamlit + ASR |
-| [FastAPI Assistant v3](https://github.com/NathanMaine/realtime-ai-assistant003-fast-api) | Fast backend variant |
-| [Streamlit Assistant v2](https://github.com/NathanMaine/realtime-ai-assistant002) | Early ASR → LLM pipeline prototype |
+| [Realtime AI Assistant](https://github.com/NathanMaine/realtime-ai-assistant) | FastAPI template |
 
 </details>
 
@@ -96,39 +102,23 @@ Production-grade tools for teams deploying AI agents in enterprise environments.
 
 | Project | Description |
 |---------|-------------|
-| [Agentforce Data-Aware Agent](https://github.com/NathanMaine/Agentforce-Data-Aware-Agent) | Metadata-aware safe action execution |
-| [Dynamic Action](https://github.com/NathanMaine/Agentforce-Dynamic-Action) | Generates Apex actions |
+| [Agentforce Data-Aware Agent](https://github.com/NathanMaine/Agentforce-Data-Aware-Agent) | Auto-discovers org schema → enforces FLS/sharing → runs safe Apex/Flow |
+| [Dynamic Action](https://github.com/NathanMaine/Agentforce-Dynamic-Action) | Natural language → generated Apex actions |
 | [Dynamic Action (Invocable)](https://github.com/NathanMaine/Agentforce-Dynamic-Action-Invocable) | Flow-compatible action generator |
 
 </details>
 
 <details>
-<summary><strong>Classical AI</strong> (2 projects)</summary>
+<summary><strong>Classical AI & Other</strong> (6 projects)</summary>
 
 | Project | Description |
 |---------|-------------|
 | [Backward-Chaining Engine](https://github.com/NathanMaine/LISP-Backward-Chaining-Core-Engine) | Goal-driven inference (Common Lisp) |
 | [Car Expert System](https://github.com/NathanMaine/lisp-car-expert-system) | Rule-based troubleshooting (Common Lisp) |
-
-</details>
-
-<details>
-<summary><strong>Chess Analysis</strong> (2 projects)</summary>
-
-| Project | Description |
-|---------|-------------|
-| [Chess Analyzer v2](https://github.com/NathanMaine/Chess-Analyzer-v2) | Web-based PGN analysis |
-| [Chess Analyzer](https://github.com/NathanMaine/chess-analyzer) | PGN parsing engine (Python) |
-
-</details>
-
-<details>
-<summary><strong>Experimental & Creative</strong> (2 projects)</summary>
-
-| Project | Description |
-|---------|-------------|
-| [Thermomix Recipe Genius](https://github.com/NathanMaine/Thermomix-Recipe-Genius) | AI-driven recipe generator |
-| [Bongo Cat Monitor Remix](https://github.com/NathanMaine/bongo_cat_monitor_remix) | Animated desktop monitor companion |
+| [Chess Analyzer v2](https://github.com/NathanMaine/Chess-Analyzer-v2) | Web-based PGN analysis (React + TypeScript) |
+| [Chess Analyzer](https://github.com/NathanMaine/chess-analyzer) | PGN parsing engine (Python + Stockfish) |
+| [Thermomix Recipe Genius](https://github.com/NathanMaine/Thermomix-Recipe-Genius) | AI recipe generator (Next.js + FastAPI) |
+| [Bongo Cat Monitor](https://github.com/NathanMaine/bongo_cat_monitor_remix) | ESP32 desk companion with TFT display |
 
 </details>
 
@@ -138,15 +128,16 @@ Production-grade tools for teams deploying AI agents in enterprise environments.
 
 | Domain | Proof Points |
 |--------|--------------|
-| **Data Platforms** | Tens of millions of records, 28+ sources, 95.48% match rates, 99% identity unification |
-| **Identity & Security** | Hundreds of thousands of users, 200 application SSO, Okta/SAML/OIDC at scale |
-| **Compliance Frameworks** | SOX, SOC2, HIPAA, NIST 800-171, CMMC, FedRAMP familiarity |
-| **Program Scale** | $20M+ enterprise portfolios, multi-cloud at scale |
-| **Customer Outcomes** | Perfect CSAT, "Excellent" on Risk Management and Communication |
-| **Process Optimization** | Cycle times cut from 6 weeks → 2 weeks (67% reduction) |
+| **Data Platforms** | 89M records → 45.9M unified profiles, 95.48% match rate, 99% identity unification |
+| **Identity & Security** | 700,000-user Okta deployment, 200 application SSO (SAML/OIDC) |
+| **Compliance** | SOX, SOC2, HIPAA, NIST 800-171, CMMC, FedRAMP adjacency |
+| **Program Delivery** | $20M+ multi-cloud portfolios, 5/5 CSAT, "Excellent" risk management |
+| **Process** | 6 weeks → 2 weeks onboarding cycle (67% reduction) |
 
-**MIT** AI/ML Certificate (2024) · **Scrum Alliance** CSM · **Salesforce Certified:** Data Cloud Consultant · Administrator · AI Associate · Financial Services Cloud · Service Cloud · Sales Cloud
+**MIT** AI/ML Certificate · **Salesforce:** Data Cloud Consultant · Administrator · AI Associate · **Scrum:** CSM
 
 ---
 
-📧 nmaine@gmail.com · 🔗 [LinkedIn](https://www.linkedin.com/in/nathanmaine) · 🌐 [nathanmaine.com](https://nathanmaine.com) · 🎙️ [Podcast](https://podcast.nathanmaine.com)
+**Memoriant Inc.** — Delaware C Corporation — [memoriant.ai](https://memoriant.ai)
+
+nmaine@gmail.com · [LinkedIn](https://www.linkedin.com/in/nathanmaine) · [nathanmaine.com](https://nathanmaine.com) · [HuggingFace](https://huggingface.co/Nathan-Maine)
