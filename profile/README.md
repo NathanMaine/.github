@@ -7,13 +7,13 @@
 [![Website](https://img.shields.io/badge/Website-000000?style=flat&logo=safari&logoColor=white)](https://nathanmaine.com)
 [![Podcast](https://img.shields.io/badge/Podcast-8B5CF6?style=flat&logo=spotify&logoColor=white)](https://podcast.nathanmaine.com)
 
-I build the AI systems I've spent a career learning to manage — compliance LLMs, governed inference gateways, evaluation harnesses for autonomous agents, and patent-pending token governance infrastructure. 12 years enterprise delivery across identity platforms (700K users), data unification (89M records, 95.48% match rates), and $20M+ multi-cloud programs. 46 repos.
+I build the AI systems I've spent a career learning to manage — compliance LLMs, governed inference gateways, evaluation harnesses for autonomous agents, and patent-pending token governance infrastructure. 12 years enterprise delivery across identity platforms (700K users), data unification (89M records, 95.48% match rates), and $20M+ multi-cloud programs. 49 repos.
 
 ---
 
-## Flagship: CMMC Expert
+## CMMC Expert Platform (v1.5.0)
 
-The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four QLoRA models on Qwen2.5-Instruct, trained for $77 total compute, deployed fully air-gapped via Ollama.
+The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four QLoRA models on Qwen2.5-Instruct, trained for $77 total compute, deployed fully air-gapped via Ollama. The platform implements 27 CMMC controls across 5 families (AC, AU, IA, SC, SI) plus 3 DFARS clauses.
 
 | Model | Size | HuggingFace |
 |-------|------|-------------|
@@ -22,25 +22,29 @@ The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four Q
 | cmmc-expert-32b | 18.5 GB | [Nathan-Maine/cmmc-expert-32b](https://huggingface.co/Nathan-Maine/cmmc-expert-32b) |
 | cmmc-expert-72b | 44.2 GB | [Nathan-Maine/cmmc-expert-72b](https://huggingface.co/Nathan-Maine/cmmc-expert-72b) |
 
-13,434 training examples from 5 government sources. Frameworks: CMMC 2.0, NIST 800-171 Rev 2/3, 800-53 Rev 5, HIPAA, DFARS.
+**690 total tests** across a three-tier architecture (550 internal + 140 Dark Factory behavioral scenarios):
 
 | Repository | What It Does | Tests |
 |------------|-------------|-------|
+| [**governed-llm-gateway**](https://github.com/NathanMaine/governed-llm-gateway) | SHA-256 hash-chain audit trails, YAML policy-as-code, PII/CUI detection, compliance evidence export | 134 passing |
 | [**cmmc-compliance-ai-model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | The 4 fine-tuned models + training pipeline | Published on HuggingFace |
-| [**governed-llm-gateway**](https://github.com/NathanMaine/governed-llm-gateway) | SHA-256 hash-chain audit trails, YAML policy-as-code, PII detection | 103/103 passing |
-| [**garak-compliance-probes**](https://github.com/NathanMaine/garak-compliance-probes) | Adversarial probes for NVIDIA garak (PR #1619 — 20 files, 1,599 lines) | Contributed upstream |
+| [**arm64-compliance-pipeline**](https://github.com/NathanMaine/arm64-compliance-pipeline) | ARM64-native PDF extraction for DGX Spark deployment | 88 passing |
+| [**garak-compliance-probes**](https://github.com/NathanMaine/garak-compliance-probes) | Adversarial probes for NVIDIA garak ([PR #1619](https://github.com/NVIDIA/garak/pull/1619) — 20 files, 1,599 lines) | Contributed upstream |
+| [**garak**](https://github.com/NathanMaine/garak) | Fork of NVIDIA/garak with compliance probe development branch | PR source |
+
+The governed-llm-gateway is the only LLM gateway with tamper-evident audit trails (SHA-256 hash-chain), policy-as-code enforcement, and built-in PII/CUI detection — capabilities absent from LiteLLM, Portkey, and TensorZero. Every user message traverses an 11-step audited inference pipeline enforced by code, not configuration.
 
 ---
 
-## Agentic Evaluation Sandbox
+## Dark Factory Testing & Agentic Evaluation
 
-Holdout scenario evaluation harness for AI agents. Created **December 16, 2025**.
+**140 black-box behavioral scenarios** in a physically separate holdout repository. The AI agents that build the platform never see these tests — an agent cannot game what it cannot see. Docker digital twin with mock Ollama for deterministic, zero-GPU execution. Latest sweep: 130 passed, 3 real platform findings discovered.
 
-Scenarios are stored *outside* the codebase — agents can't game what they can't see. The architecture uses Doer / Judge / Adversary / Observer roles with probabilistic satisfaction scoring (threshold ≥ 0.85) and append-only JSONL audit trails with integrity hashes.
+This architecture independently converged with [StrongDM's Software Factory](https://factory.strongdm.ai) pattern (published February 2026). The [Agentic Evaluation Sandbox](https://github.com/NathanMaine/agentic-evaluation-sandbox) formalizing this pattern was created **December 2025**, predating their publication.
 
 | Repository | What It Does |
 |------------|-------------|
-| [**agentic-evaluation-sandbox**](https://github.com/NathanMaine/agentic-evaluation-sandbox) | Holdout scenario evaluator with 4-role architecture |
+| [**agentic-evaluation-sandbox**](https://github.com/NathanMaine/agentic-evaluation-sandbox) | Holdout scenario evaluator — Doer/Judge/Adversary/Observer roles, probabilistic scoring, append-only audit trails. Created Dec 2025. |
 | [**governance-graph-compiler**](https://github.com/NathanMaine/governance-graph-compiler) | Policy Markdown → directed acyclic graph for compliance traceability |
 
 **Run the full suite:** [agentic-ai-portfolio](https://github.com/NathanMaine/agentic-ai-portfolio) — AES · GGC · AMG · SHAW · TEA
@@ -77,6 +81,7 @@ Purpose-built agents using deterministic, auditable logic — identical inputs a
 | [meeting-memory-companion](https://github.com/NathanMaine/meeting-memory-companion) | Extracts structured meeting data via 6-category classification | Token-overlap scoring |
 | [ai-ops-kpi-pipeline](https://github.com/NathanMaine/ai-ops-kpi-pipeline) | ETL with suffix-based heuristic aggregation | Zero dependencies |
 | [devex-metrics-dashboard](https://github.com/NathanMaine/devex-metrics-dashboard) | 7 DORA-aligned health categories | Signal-counting aggregation |
+| [agent-zero-dashboard](https://github.com/NathanMaine/agent-zero-dashboard) | Monitoring dashboard for Agent Zero autonomous AI framework | Real-time state visualization |
 
 ---
 
@@ -88,7 +93,7 @@ Purpose-built agents using deterministic, auditable logic — identical inputs a
 | Project | Description |
 |---------|-------------|
 | [Project Aurora Echo](https://github.com/NathanMaine/Project-Aurora-Echo) | Real-time meeting copilot (FastAPI + WebSocket + faster-whisper) |
-| [Aurora Echo v2.0](https://github.com/NathanMaine/Project-Aurora-Echo-v2.0) | Enhanced variant |
+| [Aurora Echo v2.0](https://github.com/NathanMaine/Project-Aurora-Echo-v2.0) | NVIDIA-accelerated variant |
 | [FastAPI Assistant v3](https://github.com/NathanMaine/realtime-ai-assistant003-fast-api) | GPU-accelerated backend |
 | [Streamlit Assistant v4](https://github.com/NathanMaine/realtime-ai-assistant004-stream-lit) | Streamlit + ASR |
 | [Realtime AI Assistant](https://github.com/NathanMaine/realtime-ai-assistant) | FastAPI template |
@@ -107,7 +112,7 @@ Purpose-built agents using deterministic, auditable logic — identical inputs a
 </details>
 
 <details>
-<summary><strong>Classical AI & Other</strong> (6 projects)</summary>
+<summary><strong>Classical AI & Other</strong> (7 projects)</summary>
 
 | Project | Description |
 |---------|-------------|
@@ -117,6 +122,7 @@ Purpose-built agents using deterministic, auditable logic — identical inputs a
 | [Chess Analyzer](https://github.com/NathanMaine/chess-analyzer) | PGN parsing engine (Python + Stockfish) |
 | [Thermomix Recipe Genius](https://github.com/NathanMaine/Thermomix-Recipe-Genius) | AI recipe generator (Next.js + FastAPI) |
 | [Bongo Cat Monitor](https://github.com/NathanMaine/bongo_cat_monitor_remix) | ESP32 desk companion with TFT display |
+| [GitHub Avatar Rotator](https://github.com/NathanMaine/Github-Avatar-Rotator) | Automated GitHub avatar rotation |
 
 </details>
 
