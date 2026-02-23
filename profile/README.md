@@ -28,7 +28,6 @@ The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four m
 |------------|-------------|-------|
 | [**governed-llm-gateway**](https://github.com/NathanMaine/governed-llm-gateway) | SHA-256 hash-chain audit trails, YAML policy-as-code, PII/CUI detection, compliance evidence export | 134 passing |
 | [**cmmc-compliance-ai-model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | The 4 fine-tuned models + training pipeline | Published on HuggingFace |
-| [**arm64-compliance-pipeline**](https://github.com/NathanMaine/arm64-compliance-pipeline) | ARM64-native PDF extraction for DGX Spark deployment | 88 passing |
 | [**garak-compliance-probes**](https://github.com/NathanMaine/garak-compliance-probes) | Adversarial probes for NVIDIA garak ([PR #1619](https://github.com/NVIDIA/garak/pull/1619) — 20 files, 1,599 lines) | Contributed upstream |
 | [**garak**](https://github.com/NathanMaine/garak) | Fork of NVIDIA/garak with compliance probe development branch | PR source |
 
