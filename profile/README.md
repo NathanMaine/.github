@@ -1,15 +1,13 @@
 # Nathan Maine
 
-**Founder, Memoriant Inc. | Senior TPM at Salesforce | Patent-Pending AI Infrastructure**
+**Senior Technical Program Manager | AI Systems Builder | 12+ Years Enterprise Delivery**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nathanmaine)
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=flat&logo=huggingface&logoColor=black)](https://huggingface.co/Nathan-Maine)
 [![Website](https://img.shields.io/badge/Website-000000?style=flat&logo=safari&logoColor=white)](https://nathanmaine.com)
 [![Podcast](https://img.shields.io/badge/Podcast-8B5CF6?style=flat&logo=spotify&logoColor=white)](https://podcast.nathanmaine.com)
 
-I build AI systems for regulated industries — compliance LLMs, governed inference gateways, and evaluation harnesses for autonomous agents. I also manage $20M+ enterprise programs at Salesforce. 12 years delivery, 46 repos.
-
-**Memoriant Inc.** is a Delaware C Corporation building air-gapped compliance AI for the Defense Industrial Base. Patent-pending token governance infrastructure. NASA commitment letter.
+I build the AI systems I've spent a career learning to manage — compliance LLMs, governed inference gateways, evaluation harnesses for autonomous agents, and patent-pending token governance infrastructure. 12 years enterprise delivery across identity platforms (700K users), data unification (89M records, 95.48% match rates), and $20M+ multi-cloud programs. 46 repos.
 
 ---
 
@@ -137,7 +135,5 @@ Purpose-built agents using deterministic, auditable logic — identical inputs a
 **MIT** AI/ML Certificate · **Salesforce:** Data Cloud Consultant · Administrator · AI Associate · **Scrum:** CSM
 
 ---
-
-**Memoriant Inc.** — Delaware C Corporation — [memoriant.ai](https://memoriant.ai)
 
 nmaine@gmail.com · [LinkedIn](https://www.linkedin.com/in/nathanmaine) · [nathanmaine.com](https://nathanmaine.com) · [HuggingFace](https://huggingface.co/Nathan-Maine)
