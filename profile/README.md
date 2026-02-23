@@ -11,9 +11,9 @@ I build the AI systems I've spent a career learning to manage — compliance LLM
 
 ---
 
-## CMMC Compliance AI Platform (v1.5.0)
+## CMMC Compliance AI Platform (v1.5.1)
 
-The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four models (7B–72B) trained for $77 total compute, deployed fully air-gapped via Ollama. 690 tests across three tiers. 27 CMMC controls across 5 families (AC, AU, IA, SC, SI) plus 3 DFARS clauses.
+The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four models (7B–72B) trained for $77 total compute, deployed fully air-gapped via Ollama. 708 tests across three tiers — including 140 blind holdout scenarios that caught 3 real security bugs the 568 internal tests missed. 27 CMMC controls across 5 families (AC, AU, IA, SC, SI) plus 3 DFARS clauses.
 
 | Model | Size | HuggingFace |
 |-------|------|-------------|
@@ -33,11 +33,12 @@ The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four m
 
 ## AI Agent Evaluation & Dark Factory Testing
 
-140 black-box behavioral scenarios in a physically separate holdout repository — the AI that builds the platform never sees the tests. An agent cannot game what it cannot see. This architecture independently converged with [StrongDM's Software Factory](https://factory.strongdm.ai) pattern (published February 2026). The [Agentic Evaluation Sandbox](https://github.com/NathanMaine/agentic-evaluation-sandbox) was created **December 2025**, predating their publication.
+140 black-box behavioral scenarios in a physically separate holdout repository — the AI that builds the platform never sees the tests. An agent cannot game what it cannot see. The first sweep caught 3 real security bugs that passed all 568 internal tests: broken MFA setup (High), missing X-Content-Type-Options header (Medium), and missing X-Frame-Options header (Medium). This architecture independently converged with [StrongDM's Software Factory](https://factory.strongdm.ai) pattern (published February 2026). The [Agentic Evaluation Sandbox](https://github.com/NathanMaine/agentic-evaluation-sandbox) was created **December 2025**, predating their publication.
 
 | Repository | Problem It Solves | How It Works |
 |---|---|---|
-| [**agentic-evaluation-sandbox**](https://github.com/NathanMaine/agentic-evaluation-sandbox) | AI agents can learn to game their own tests when the tests live inside the codebase | Stores test scenarios in a separate location the AI never sees, then runs them through four roles — Doer, Judge, Adversary, Observer — with probabilistic scoring instead of simple pass/fail |
+| [**cmmc-scenario-holdout**](https://github.com/NathanMaine/cmmc-scenario-holdout) | 568 internal tests all passed but 3 real security bugs shipped — visible tests get gamed by AI agents | 140 black-box HTTP scenarios in a separate repo the AI never sees. Docker digital twin with mock Ollama (no GPU). Covers auth, RBAC, PII/CUI blocking, prompt injection, audit integrity, security headers, and 8 CMMC policy rules. First sweep caught 3 bugs — all fixed in v1.5.1 |
+| [**agentic-evaluation-sandbox**](https://github.com/NathanMaine/agentic-evaluation-sandbox) | AI agents can learn to game their own tests when the tests live inside the codebase | The original Dark Factory framework (December 2025). Defines four evaluation roles — Doer, Judge, Adversary, Observer — with holdout scenarios and probabilistic satisfaction scoring instead of simple pass/fail |
 | [**agentic-ai-portfolio**](https://github.com/NathanMaine/agentic-ai-portfolio) | Five independent agent repos need a single entry point for orchestration and documentation | Umbrella repository tying together AES, GGC, AMG, SHAW, and TEA with shared configuration and docs |
 | [**voice-robustness-testing-agent**](https://github.com/NathanMaine/voice-robustness-testing-agent) | Voice assistants and NLU classifiers break under noisy or unusual input — failures need to be found before users find them | Injects noise, varied phrasing, and edge cases into voice endpoints, classifies each response into three outcome states, and generates a robustness report with evidence |
 | [**agent-perf-test-generator**](https://github.com/NathanMaine/agent-perf-test-generator) | Writing load test plans for steady traffic, burst traffic, and endurance runs is repetitive and error-prone | Takes a service profile and SLO targets as input, then generates ready-to-run test configurations with pass/fail thresholds derived directly from the SLOs |
