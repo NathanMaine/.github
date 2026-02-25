@@ -61,6 +61,14 @@ Purpose-built components for agent memory, recovery, planning, and coordination.
 
 ---
 
+## AI Model Serving
+
+| Repository | Problem It Solves | How It Works |
+|---|---|---|
+| [**el-barto-serve**](https://github.com/NathanMaine/el-barto-serve) | Stable-DiffCoder is the top-performing 8B code model but uses a non-standard diffusion pipeline that no serving framework supports (not vLLM, not Ollama, not TensorRT-LLM) | OpenAI-compatible `/v1/chat/completions` server for ByteDance's mask-diffusion code LLM. Generates code by denoising entire blocks simultaneously instead of left-to-right token prediction. Auto-patches Flash Attention for Blackwell GPUs. [Landing page](https://nathanmaine.github.io/el-barto-serve) |
+
+---
+
 <details>
 <summary><strong>Developer Experience & Operations</strong> (8 projects)</summary>
 
