@@ -8,7 +8,7 @@
 [![Memoriant](https://img.shields.io/badge/Memoriant.ai-6366f1?style=flat&logo=safari&logoColor=white)](https://memoriant.ai)
 [![Podcast](https://img.shields.io/badge/Podcast-8B5CF6?style=flat&logo=spotify&logoColor=white)](https://podcast.nathanmaine.com)
 
-I build AI systems I've spent a career learning to manage — compliance LLMs, expert knowledge platforms, governed inference gateways, and autonomous content production (4 patents pending). 12 years enterprise delivery across identity platforms (700K users), data unification (89M records, 95.48% match rates), and $20M+ multi-cloud programs. NVIDIA Inception member running production AI on DGX Spark.
+I build AI systems I've spent a career learning to manage — compliance LLMs, expert knowledge platforms, governed inference gateways, and autonomous content production (patent pending). 12 years enterprise delivery across identity platforms (700K users), data unification (89M records, 95.48% match rates), and $20M+ multi-cloud programs. NVIDIA Inception member running production AI on DGX Spark.
 
 ---
 
@@ -129,7 +129,7 @@ Purpose-built components for agent memory, recovery, planning, and coordination.
 
 ---
 
-Plus 8 private repositories covering compliance training data pipelines, podcast production platform (4 patents pending), and infrastructure automation.
+Plus private repositories covering compliance training data pipelines, podcast production platform (patent pending), and infrastructure automation.
 
 **MIT** AI/ML Certificate · **Salesforce:** Data Cloud Consultant · Administrator · AI Associate · **Scrum:** CSM · **NVIDIA Inception** Member
 
