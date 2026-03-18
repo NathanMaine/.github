@@ -40,13 +40,13 @@ The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four m
 
 ---
 
-## 🧠 Brain Trust Expert Knowledge Platform
+## 🧠 Expert Knowledge Systems
 
-130,000+ searchable chunks from 36+ AI/ML experts. GPU-accelerated transcription pipeline, semantic search via Qdrant, expert profiles with toggle system, accessible from any AI tool via MCP. Cross-encoder reranking, BM25 hybrid search, metadata filtering.
+Building AI-queryable knowledge bases from expert content — video, audio, blogs, documentation. Production system running 130,000+ searchable chunks across 36+ domain experts with GPU-accelerated ingestion and cross-encoder reranking. Accessible from any AI tool via MCP.
 
 | Repository | What It Does |
 |---|---|
-| [**rah-qdrant-integration**](https://github.com/NathanMaine/rah-qdrant-integration) | Qdrant vector search integration for RA-H OS — Docker, CLI tools, cross-platform (macOS/Linux/Windows) |
+| [**rah-qdrant-integration**](https://github.com/NathanMaine/rah-qdrant-integration) | Qdrant vector search integration for knowledge graphs — Docker, CLI tools, cross-platform (macOS/Linux/Windows) |
 
 ---
 
