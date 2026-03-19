@@ -12,11 +12,18 @@ I build AI systems I've spent a career learning to manage — compliance LLMs, e
 
 ---
 
-## 🔥 Active Challenges
+## 🔥 Active Projects & Challenges
 
-| Challenge | Description | Status |
-|-----------|-------------|--------|
-| [**parameter-golf**](https://github.com/NathanMaine/parameter-golf) | **OpenAI Model Craft Challenge** — Train the best LLM that fits in 16MB on 8×H100s. QAT, depth recurrence, factorized embeddings. | 🟢 Active (Mar–Apr 2026) |
+<table>
+<tr>
+<td width="80" align="center"><a href="https://github.com/NathanMaine/memoriant-ops-bot"><img src="https://raw.githubusercontent.com/NathanMaine/memoriant-ops-bot/main/docs/images/mops-logo.jpeg" width="64"></a></td>
+<td><a href="https://github.com/NathanMaine/memoriant-ops-bot"><strong>MOPS</strong></a> — Multi-provider AI agent remote control via Telegram & Matrix. Claude Code + Codex CLI + Gemini CLI from your phone. Open-source alternative to Claude Dispatch — released 5 days before Anthropic shipped theirs. <em>Free, MIT licensed.</em></td>
+</tr>
+<tr>
+<td width="80" align="center">⛳</td>
+<td><a href="https://github.com/NathanMaine/parameter-golf"><strong>Parameter Golf</strong></a> — OpenAI Model Craft Challenge. Train the best LLM that fits in 16MB on 8×H100s. QAT, depth recurrence, factorized embeddings. <em>Active: Mar–Apr 2026.</em></td>
+</tr>
+</table>
 
 ---
 
