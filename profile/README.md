@@ -21,7 +21,7 @@ I build AI systems I've spent a career learning to manage — compliance LLMs, e
 </tr>
 <tr>
 <td width="80" align="center">⛳</td>
-<td><a href="https://github.com/NathanMaine/parameter-golf"><strong>Parameter Golf</strong></a> — OpenAI Model Craft Challenge. Train the best LLM that fits in 16MB on 8×H100s. QAT, depth recurrence, factorized embeddings. <em>Active: Mar–Apr 2026.</em></td>
+<td><a href="https://github.com/openai/parameter-golf/pull/273"><strong>Parameter Golf</strong></a> — OpenAI Model Craft Challenge. Train the best LLM in 16MB on 8×H100s. <strong>Submitted <a href="https://github.com/openai/parameter-golf/pull/273">PR #273</a></strong> — val_bpb 1.1575, 14.73MB, 20 experiments, $90 compute. Int6 QAT + SmearGate + SWA. <em>Active: Mar–Apr 2026.</em></td>
 </tr>
 </table>
 
