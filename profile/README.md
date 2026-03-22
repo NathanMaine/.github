@@ -21,7 +21,14 @@ I build AI systems I've spent a career learning to manage — compliance LLMs, e
 </tr>
 <tr>
 <td width="80" align="center">⛳</td>
-<td><a href="https://github.com/openai/parameter-golf/pull/273"><strong>Parameter Golf</strong></a> — OpenAI Model Craft Challenge. Train the best LLM in 16MB on 8×H100s. <strong>Submitted <a href="https://github.com/openai/parameter-golf/pull/273">PR #273</a></strong> — val_bpb 1.1575, 14.73MB, 20 experiments, $90 compute. Int6 QAT + SmearGate + SWA. <em>Active: Mar–Apr 2026.</em></td>
+<td><a href="https://github.com/openai/parameter-golf"><strong>Parameter Golf</strong></a> — OpenAI Model Craft Challenge. Train the best LLM in 16MB on 8×H100s. Three progressive submissions in 4 days, 40+ experiments, ~$150 total compute:<br><br>
+<table>
+<tr><th>Submission</th><th>val_bpb</th><th>Techniques</th></tr>
+<tr><td><a href="https://github.com/openai/parameter-golf/pull/273">PR #273</a></td><td>1.1575</td><td>Int6 QAT + SmearGate + SWA</td></tr>
+<tr><td><a href="https://github.com/openai/parameter-golf/pull/385">PR #385</a></td><td>1.1488</td><td>+ WD tuning + SWA optimization (3-seed verified)</td></tr>
+<tr><td><a href="https://github.com/openai/parameter-golf/pull/406">PR #406</a></td><td><strong>1.1287</strong></td><td>+ XSA4 + EMA + Self-Distillation TTT (3-seed verified)</td></tr>
+</table>
+The leaderboard is highly competitive and evolving rapidly — scores improve daily as the community discovers and stacks new techniques. Currently exploring custom Triton GPU kernels and Flash Attention 3 builds for further optimization. <em>Active competition: Mar 18 – Apr 30, 2026.</em></td>
 </tr>
 </table>
 
