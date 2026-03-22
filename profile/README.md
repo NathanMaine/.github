@@ -36,9 +36,11 @@ The leaderboard is highly competitive and evolving rapidly — scores improve da
 
 ## 🏗️ Flagship: CMMC Compliance AI Platform
 
-The only CMMC-specific fine-tuned LLM suite in the open-source ecosystem. Four models (7B–72B) trained for $77 total compute, deployed fully air-gapped via Ollama. 708 tests across three tiers — including 140 blind holdout scenarios. 27 CMMC controls across 5 families (AC, AU, IA, SC, SI) plus 3 DFARS clauses.
+A CMMC-specific fine-tuned LLM platform for defense compliance automation. Four proof-of-concept models (7B–72B) demonstrating the training pipeline and architecture, deployed fully air-gapped via Ollama. 708 tests across three tiers — including 140 blind holdout scenarios. 27 CMMC controls across 5 families (AC, AU, IA, SC, SI) plus 3 DFARS clauses.
 
-| Model | Size | HuggingFace |
+> **Notice:** These models are provided for proof-of-concept and testing purposes only. Production-grade models are not publicly shared. For inquiries regarding production models or commercial licensing, please contact the maintainer: **Nathan Maine** — [nmaine@memoriant.ai](mailto:nmaine@memoriant.ai)
+
+| Model (POC) | Size | HuggingFace |
 |-------|------|-------------|
 | cmmc-expert-7b | 5.1 GB | [Nathan-Maine/cmmc-expert-7b](https://huggingface.co/Nathan-Maine/cmmc-expert-7b) |
 | cmmc-expert-14b | ~10 GB | [Nathan-Maine/cmmc-expert-14b](https://huggingface.co/Nathan-Maine/cmmc-expert-14b) |
