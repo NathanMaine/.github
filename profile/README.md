@@ -20,7 +20,8 @@ Production AI systems: model training pipelines, inference serving, evaluation h
 
 | Project | What It Does | Stack |
 | --- | --- | --- |
-| [**cmmc-compliance-ai-model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | 10 fine-tuned LLMs (7B-72B) for regulated industries. QLoRA/DoRA training, GGUF export, air-gapped Ollama deployment. Published on [HuggingFace](https://huggingface.co/Nathan-Maine). | PyTorch, Unsloth, CUDA, Ollama |
+| [**cmmc-compliance-ai-model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | 10 fine-tuned LLMs (7B-72B) for regulated industries. Latest: OLMo-2 7B v4 (85% eval accuracy, 23h training on DGX Spark). QLoRA/DoRA, GGUF, air-gapped Ollama. Published on [HuggingFace](https://huggingface.co/Nathan-Maine). | PyTorch, Unsloth, CUDA, Ollama |
+| [**cmmc-compliance-dataset**](https://huggingface.co/datasets/memoriant/cmmc-compliance-dataset) | 18,202 curated compliance examples across 11 regulatory frameworks. Rebuilt from 67K raw examples (73% noise removed). Gated access with lead capture. | NIST, CMMC, HIPAA, FedRAMP |
 | [**dgx-spark-kv-cache-benchmark**](https://github.com/Memoriant/dgx-spark-kv-cache-benchmark) | Novel benchmarks on NVIDIA DGX Spark GB10. Discovered 92.5% KV cache collapse at 64K context and unified memory paradox. Published to r/LocalLLaMA, HN, NVIDIA Forums. | llama.cpp, CUDA 13.0, aarch64 |
 | [**governed-llm-gateway**](https://github.com/NathanMaine/governed-llm-gateway) | Policy-as-code LLM gateway: tamper-evident audit trails, rate limiting, cost telemetry. 103 tests. | Python, FastAPI |
 | [**el-barto-serve**](https://github.com/NathanMaine/el-barto-serve) | OpenAI-compatible inference server. Auto-patches Flash Attention for Blackwell GPUs. | Python, PyTorch |
@@ -89,7 +90,7 @@ Tools for scaling governance across distributed engineering teams in regulated e
 
 | Project | What It Does | Link |
 | --- | --- | --- |
-| **garak Compliance Probes** | LLM vulnerability probes for NVIDIA garak. 4 probes, 6 detectors, 80 adversarial prompts. [PR #1619](https://github.com/NVIDIA/garak/pull/1619), [PR #1658](https://github.com/NVIDIA/garak/pull/1658) | [Repo](https://github.com/NathanMaine/garak-compliance-probes) |
+| **garak Compliance Probes** | LLM vulnerability probes for NVIDIA garak. Fabricated regulatory citations ([PR #1658](https://github.com/NVIDIA/garak/pull/1658)), homoglyph obfuscation ([PR #1660](https://github.com/NVIDIA/garak/pull/1660)), architecture [Discussion #1659](https://github.com/NVIDIA/garak/discussions/1659). Decomposed from monolithic PR #1619 per maintainer architectural feedback. | [Repo](https://github.com/NathanMaine/garak-compliance-probes) |
 | **Governance Graph Compiler** | Compiles policy Markdown into DAGs for deterministic audit evaluation | [Repo](https://github.com/NathanMaine/governance-graph-compiler) |
 | **Compliance Validation Agent** | Validates workflows against compliance rules, generates audit trails | [Repo](https://github.com/NathanMaine/compliance-validation-agent) |
 | **Patent Platform** | Full patent pipeline: search, analyze, draft, review, file. 706+ tests. | [Repo](https://github.com/NathanMaine/memoriant-patent-platform) |
