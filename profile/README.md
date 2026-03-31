@@ -120,4 +120,4 @@ Tools for scaling governance across distributed engineering teams in regulated e
 
 **MIT** Applied Data Science Certificate | **Salesforce:** Data Cloud Consultant, Administrator, AI Associate | **Scrum:** CSM | **NVIDIA Inception** Member
 
-📧 nmaine@gmail.com | [LinkedIn](https://www.linkedin.com/in/nathanmaine) | [nathanmaine.com](https://nathanmaine.com) | [HuggingFace](https://huggingface.co/Nathan-Maine) | [Memoriant Inc.](https://github.com/Memoriant) | Houston, TX
+📧 nmaine@gmail.com | [LinkedIn](https://www.linkedin.com/in/nathanmaine) | [nathanmaine.com](https://nathanmaine.com) | [HuggingFace](https://huggingface.co/Nathan-Maine) | [Memoriant Inc.](https://github.com/Memoriant)
