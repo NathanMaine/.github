@@ -30,26 +30,25 @@ Production AI systems: model training pipelines, inference serving, evaluation h
 
 ## OpenAI Parameter Golf (Active Competition)
 
-Training the best language model in 16MB on 8xH100s. **Only entrant to implement all 7 of OpenAI's explicitly requested research directions.** 10 PRs submitted, 8 complete training scripts (11,810 lines of novel research code), 25+ GPU experiments across RTX 5090 and H200 SXM pods.
+Training the best language model in 16MB on 8xH100s. **Only entrant to implement all 7 of OpenAI's explicitly requested research directions.** 13 PRs submitted, 8 complete training scripts (11,810 lines of novel research code), 25+ GPU experiments across RTX 5090 and H200 SXM pods.
 
-**Record Submissions (3-seed verified):**
+**All 13 Submissions (sorted by BPB):**
 
-| Track | Best BPB | Architecture | PR |
-|-------|---------|-------------|-----|
-| **N-gram hybrid** | **0.1154** | Order-20 Dirichlet Posterior + Per-Order OBCL + Phrase Cache | [#968](https://github.com/openai/parameter-golf/pull/968) |
-| **Neural** | **1.1311** | 11L XSA-all + EMA + LoRA TTT + Partial RoPE + int6+zstd | [#1127](https://github.com/openai/parameter-golf/pull/1127) |
-
-**Research Submissions (all 7 OpenAI-requested architectures):**
-
-| PR | Architecture | BPB |
-|----|-------------|-----|
-| [#1192](https://github.com/openai/parameter-golf/pull/1192) | Fused Triton Megakernels (RMSNorm + LeakyReLU) | 1.356 |
-| [#1191](https://github.com/openai/parameter-golf/pull/1191) | H-Net Dynamic Chunking (learned tokenization) | 1.359 |
-| [#1193](https://github.com/openai/parameter-golf/pull/1193) | Universal Transformer + Adaptive Density | 1.439 |
-| [#1195](https://github.com/openai/parameter-golf/pull/1195) | Learning Adapters on Random Linear Maps | 2.202 |
-| [#1196](https://github.com/openai/parameter-golf/pull/1196) | LLM-JEPA (Joint Embedding Prediction) | 2.202 |
-| [#1197](https://github.com/openai/parameter-golf/pull/1197) | Mamba-Inspired SSM Hybrid (3:1 SSM:Attention) | 3.317 |
-| [#1194](https://github.com/openai/parameter-golf/pull/1194) | Text Diffusion (MDLM, masked discrete diffusion) | 3.380 |
+| PR | Type | Architecture | BPB | Seeds |
+|----|------|-------------|-----|-------|
+| [#968](https://github.com/openai/parameter-golf/pull/968) | Record | Order-20 Dirichlet Posterior + Per-Order OBCL + Phrase Cache | **0.1154** | 3 |
+| [#948](https://github.com/openai/parameter-golf/pull/948) | Record | Two-Level Dirichlet Posterior + Phrase Cache | **0.1156** | 3 |
+| [#1127](https://github.com/openai/parameter-golf/pull/1127) | Record | 11L XSA-all + EMA + LoRA TTT + Partial RoPE + dim480 | **1.1311** | 3 |
+| [#406](https://github.com/openai/parameter-golf/pull/406) | Neural | 11L XSA4 + EMA + Self-Distillation TTT | 1.1287 | 3 |
+| [#385](https://github.com/openai/parameter-golf/pull/385) | Neural | 11L Int6 QAT + SmearGate + SWA(0.4) + WD=0.04 | 1.1488 | 3 |
+| [#273](https://github.com/openai/parameter-golf/pull/273) | Neural | 10L Int6 QAT + SmearGate + SWA | 1.1575 | 1 |
+| [#1192](https://github.com/openai/parameter-golf/pull/1192) | Research | Fused Triton Megakernels (RMSNorm + LeakyReLU) | 1.356 | |
+| [#1191](https://github.com/openai/parameter-golf/pull/1191) | Research | H-Net Dynamic Chunking (learned tokenization) | 1.359 | |
+| [#1193](https://github.com/openai/parameter-golf/pull/1193) | Research | Universal Transformer + Adaptive Density | 1.439 | |
+| [#1195](https://github.com/openai/parameter-golf/pull/1195) | Research | Learning Adapters on Random Linear Maps | 2.202 | |
+| [#1196](https://github.com/openai/parameter-golf/pull/1196) | Research | LLM-JEPA (Joint Embedding Prediction) | 2.202 | |
+| [#1197](https://github.com/openai/parameter-golf/pull/1197) | Research | Mamba-Inspired SSM Hybrid (3:1 SSM:Attention) | 3.317 | |
+| [#1194](https://github.com/openai/parameter-golf/pull/1194) | Research | Text Diffusion (MDLM, masked discrete diffusion) | 3.380 | |
 
 **Novel techniques developed beyond OpenAI's requests:** Adaptive Density Training (sparse-to-dense progressive unmasking), Echo Training (self-distillation from EMA checkpoints), Gradient Quilting (per-iteration adaptive LR with auto-freezing).
 
