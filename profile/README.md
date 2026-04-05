@@ -109,6 +109,17 @@ Tools for scaling governance across distributed engineering teams in regulated e
 
 ---
 
+## Open Source Tutorials
+
+Teaching ML by building from scratch. Free, fill-in-the-blanks format.
+
+| Tutorial | What You Build | Link |
+| --- | --- | --- |
+| **smallest-ai-tutorial** | 4 neural networks from scratch in pure Python (MLP → LSTM → Transformer → BitNet) teaching phonics. 273 tests. | [Repo](https://github.com/NathanMaine/smallest-ai-tutorial) |
+| **smallest-ai-built-from-the-ground-up** | Full project: Phase 1 complete with all 4 architectures, C export for ESP32, ARM QEMU verification. | [Repo](https://github.com/NathanMaine/smallest-ai-built-from-the-ground-up) |
+
+---
+
 ## Claude Code Plugin Marketplace
 
 [14 published plugins](https://github.com/NathanMaine/memoriant-marketplace) for AI-powered development workflows: patent drafting, architecture review, load testing, documentation drift detection, governance compilation, test coverage analysis, and more.
