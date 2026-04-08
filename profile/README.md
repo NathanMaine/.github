@@ -12,6 +12,52 @@
 
 Currently building production AI systems at [Memoriant Inc.](https://github.com/Memoriant): fine-tuned compliance LLMs, GPU-accelerated inference infrastructure, and agentic evaluation frameworks deployed on NVIDIA DGX Spark.
 
+**Senior Technical Program Manager | AI Builder | NVIDIA Inception Member**
+
+I build AI systems on hardware I own. 13 years of program management, 10 LLMs published on HuggingFace, and a DGX Spark running 24/7 on my desk.
+
+---
+
+## NeuralForge
+![Gemini_Generated_Image_fsy6o2fsy6o2fsy6](https://github.com/user-attachments/assets/68ead074-d399-4b18-9775-1c4d7ff41d29)
+
+
+**GPU-native knowledge intelligence platform built on 6 NVIDIA technologies.**
+
+Your experts. Your GPU. Your data never leaves.
+
+Ingest domain expertise at scale, build GPU-accelerated relationship graphs with RAPIDS cuGraph, and serve answers through any OpenAI-compatible tool. Built on NIM, TensorRT-LLM, Triton, NeMo Guardrails, cuGraph, and CUDA.
+
+[![GitHub](https://img.shields.io/badge/GitHub-neuralforge-76B900?style=for-the-badge&logo=github)](https://github.com/NathanMaine/neuralforge)
+[![Tests](https://img.shields.io/badge/Tests-919_passing-brightgreen?style=for-the-badge)](https://github.com/NathanMaine/neuralforge)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](https://github.com/NathanMaine/neuralforge/blob/main/LICENSE)
+
+---
+
+## What I Build
+
+| Project | What It Does | Stack |
+|---------|-------------|-------|
+| [NeuralForge](https://github.com/NathanMaine/neuralforge) | GPU-native knowledge intelligence with temporal knowledge graphs | NIM, TensorRT-LLM, Triton, NeMo Guardrails, cuGraph |
+| [CMMC Compliance AI](https://github.com/NathanMaine/cmmc-compliance-ai-model) | 10 fine-tuned LLMs for cybersecurity compliance (CMMC, NIST, HIPAA) | QLoRA, GGUF, Ollama, DGX Spark |
+| [Governed LLM Gateway](https://github.com/NathanMaine/governed-llm-gateway) | Policy-as-code gateway with tamper-evident audit trails | FastAPI, SHA-256 hash chains, 103 tests |
+| [Agentic Evaluation Sandbox](https://github.com/NathanMaine/agentic-evaluation-sandbox) | Doer/Judge/Adversary/Observer framework for agent testing | Multi-agent orchestration |
+| [Self-Healing Agentic Workflows](https://github.com/NathanMaine/self-healing-agentic-workflows) | Circuit breakers, fallback chains, auto-reroute for autonomous agents | Failure detection, recovery |
+| [garak Contributions](https://github.com/NVIDIA/garak/pull/1658) | Adversarial probes for NVIDIA's LLM vulnerability scanner | Prompt injection, Unicode obfuscation |
+
+## Hardware
+
+- **NVIDIA DGX Spark** (GB10, 128GB unified memory) running daily
+- **Gemma 4 26B A4B** for inference at 43 tok/s
+- **486K+ knowledge chunks** from 80+ AI/ML experts
+- 10G office network connecting DGX Spark, NAS, and workstations
+
+## Links
+
+- [LinkedIn](https://www.linkedin.com/in/nathanmaine/)
+- [HuggingFace](https://huggingface.co/Nathan-Maine)
+- [Website](https://nathanmaine.com)
+
 ---
 
 ## AI/ML Infrastructure & Platform Engineering
