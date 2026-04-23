@@ -39,6 +39,7 @@ Ingest domain expertise at scale, build GPU-accelerated relationship graphs with
 | Project | What It Does | Stack |
 |---------|-------------|-------|
 | [NeuralForge](https://github.com/NathanMaine/neuralforge) | GPU-native knowledge intelligence with temporal knowledge graphs | NIM, TensorRT-LLM, Triton, NeMo Guardrails, cuGraph |
+| [speech-systems](https://github.com/NathanMaine/speech-systems) | Hub for ASR, TTS, and orchestration speech-AI projects (6-version Aurora Echo progression, ASR pipeline, TTS pipeline) | Parakeet, pyannote, MOSS-TTS, faster-whisper, FastAPI, DGX Spark |
 | [CMMC Compliance AI](https://github.com/NathanMaine/cmmc-compliance-ai-model) | 10 fine-tuned LLMs for cybersecurity compliance (CMMC, NIST, HIPAA) | QLoRA, GGUF, Ollama, DGX Spark |
 | [Governed LLM Gateway](https://github.com/NathanMaine/governed-llm-gateway) | Policy-as-code gateway with tamper-evident audit trails | FastAPI, SHA-256 hash chains, 103 tests |
 | [Agentic Evaluation Sandbox](https://github.com/NathanMaine/agentic-evaluation-sandbox) | Doer/Judge/Adversary/Observer framework for agent testing | Multi-agent orchestration |
