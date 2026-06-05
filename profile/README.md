@@ -4,17 +4,15 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nathanmaine)
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=flat&logo=huggingface&logoColor=black)](https://huggingface.co/Nathan-Maine)
-[![Website](https://img.shields.io/badge/Website-000000?style=flat&logo=safari&logoColor=white)](https://nathanmaine.com)
-[![Memoriant](https://img.shields.io/badge/Memoriant-4A90D9?style=flat&logo=github&logoColor=white)](https://github.com/Memoriant)
 [![NVIDIA Inception](https://img.shields.io/badge/NVIDIA_Inception-76B900?style=flat&logo=nvidia&logoColor=white)](#)
 
 13+ years leading cross-team execution across platform engineering, AI/ML infrastructure, and enterprise systems. I drive complex, multi-team technical programs from ambiguity to shipped, measurable outcomes. Deep technical fluency across distributed systems, AI inference pipelines, cloud infrastructure, and compliance automation.
 
-Currently building production AI systems at [Memoriant Inc.](https://github.com/Memoriant): fine-tuned compliance LLMs, GPU-accelerated inference infrastructure, and agentic evaluation frameworks deployed on NVIDIA DGX Spark.
+I build production AI systems on hardware I own: fine-tuned compliance LLMs, GPU-accelerated inference infrastructure, and agentic evaluation frameworks, deployed on an NVIDIA DGX Spark.
 
 **Senior Technical Program Manager | AI Builder | NVIDIA Inception Member**
 
-I build AI systems on hardware I own. 13 years of program management, 10 LLMs published on HuggingFace, and a DGX Spark running 24/7 on my desk.
+I build AI systems on hardware I own. 13 years of program management, 13 LLMs fine-tuned across 8 architectures with eval datasets on HuggingFace, and a DGX Spark running 24/7 on my desk.
 
 ---
 
@@ -28,8 +26,10 @@ Your experts. Your GPU. Your data never leaves.
 
 Ingest domain expertise at scale, build GPU-accelerated relationship graphs with RAPIDS cuGraph, and serve answers through any OpenAI-compatible tool. Built on NIM, TensorRT-LLM, Triton, NeMo Guardrails, cuGraph, and CUDA.
 
+*Active development / reference architecture: built and tested (1,006 passing tests), not yet a turnkey end-to-end deploy. See the repo Status section.*
+
 [![GitHub](https://img.shields.io/badge/GitHub-neuralforge-76B900?style=for-the-badge&logo=github)](https://github.com/NathanMaine/neuralforge)
-[![Tests](https://img.shields.io/badge/Tests-919_passing-brightgreen?style=for-the-badge)](https://github.com/NathanMaine/neuralforge)
+[![Tests](https://img.shields.io/badge/Tests-1006_passing-brightgreen?style=for-the-badge)](https://github.com/NathanMaine/neuralforge)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](https://github.com/NathanMaine/neuralforge/blob/main/LICENSE)
 
 ---
@@ -40,7 +40,7 @@ Ingest domain expertise at scale, build GPU-accelerated relationship graphs with
 |---------|-------------|-------|
 | [NeuralForge](https://github.com/NathanMaine/neuralforge) | GPU-native knowledge intelligence with temporal knowledge graphs | NIM, TensorRT-LLM, Triton, NeMo Guardrails, cuGraph |
 | [Speech-Systems](https://github.com/NathanMaine/speech-systems) | Hub for ASR, TTS, and orchestration speech-AI projects (6-version Aurora Echo progression, ASR pipeline, TTS pipeline) | Parakeet, pyannote, MOSS-TTS, faster-whisper, FastAPI, DGX Spark |
-| [CMMC Compliance AI](https://github.com/NathanMaine/cmmc-compliance-ai-model) | 10 fine-tuned LLMs for cybersecurity compliance (CMMC, NIST, HIPAA) | QLoRA, GGUF, Ollama, DGX Spark |
+| [CMMC Compliance AI](https://github.com/NathanMaine/cmmc-compliance-ai-model) | 13 fine-tuned LLMs across 8 architectures for cybersecurity compliance (CMMC, NIST, HIPAA) | QLoRA, GGUF, Ollama, DGX Spark |
 | [Governed LLM Gateway](https://github.com/NathanMaine/governed-llm-gateway) | Policy-as-code gateway with tamper-evident audit trails | FastAPI, SHA-256 hash chains, 103 tests |
 | [Agentic Evaluation Sandbox](https://github.com/NathanMaine/agentic-evaluation-sandbox) | Doer/Judge/Adversary/Observer framework for agent testing | Multi-agent orchestration |
 | [Self-Healing Agentic Workflows](https://github.com/NathanMaine/self-healing-agentic-workflows) | Circuit breakers, fallback chains, auto-reroute for autonomous agents | Failure detection, recovery |
@@ -57,7 +57,6 @@ Ingest domain expertise at scale, build GPU-accelerated relationship graphs with
 
 - [LinkedIn](https://www.linkedin.com/in/nathanmaine/)
 - [HuggingFace](https://huggingface.co/Nathan-Maine)
-- [Website](https://nathanmaine.com)
 
 ---
 
@@ -67,16 +66,18 @@ Production AI systems: model training pipelines, inference serving, evaluation h
 
 | Project | What It Does | Stack |
 | --- | --- | --- |
-| [**cmmc-compliance-ai-model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | 10 fine-tuned LLMs (7B-72B) for regulated industries. Latest: OLMo-2 7B v4 (85% eval accuracy, 23h training on DGX Spark). QLoRA/DoRA, GGUF, air-gapped Ollama. Published on [HuggingFace](https://huggingface.co/Nathan-Maine). | PyTorch, Unsloth, CUDA, Ollama |
-| [**cmmc-compliance-dataset**](https://huggingface.co/datasets/memoriant/cmmc-compliance-dataset) | 18,202 curated compliance examples across 11 regulatory frameworks. Rebuilt from 67K raw examples (73% noise removed). Gated access with lead capture. | NIST, CMMC, HIPAA, FedRAMP |
-| [**dgx-spark-kv-cache-benchmark**](https://github.com/Memoriant/dgx-spark-kv-cache-benchmark) | Novel benchmarks on NVIDIA DGX Spark GB10. Discovered 92.5% KV cache collapse at 64K context and unified memory paradox. Published to r/LocalLLaMA, HN, NVIDIA Forums. | llama.cpp, CUDA 13.0, aarch64 |
+| [**cmmc-compliance-ai-model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | 13 fine-tuned LLMs across 8 architectures (7B-72B) for regulated industries. Flagship: Gemma 4 31B (eval loss 0.4517). QLoRA/DoRA, GGUF, air-gapped Ollama. Eval datasets on [HuggingFace](https://huggingface.co/Nathan-Maine). | PyTorch, Unsloth, CUDA, Ollama |
+| [**cmmc-training-data**](https://huggingface.co/datasets/Nathan-Maine/cmmc-training-data-2026-q2) | 18,747 curated compliance examples across 11 regulatory frameworks. Rebuilt from 67K raw examples (73% noise removed). | NIST, CMMC, HIPAA, FedRAMP |
+| [**dgx-spark-kv-cache-benchmark**](https://huggingface.co/datasets/Nathan-Maine/dgx-spark-kv-cache-benchmark) | KV-cache quantization inference benchmarks on NVIDIA DGX Spark GB10 (q4/q8/f16 at long context). Published to r/LocalLLaMA, HN, NVIDIA Forums. | llama.cpp, CUDA 13.0, aarch64 |
 | [**governed-llm-gateway**](https://github.com/NathanMaine/governed-llm-gateway) | Policy-as-code LLM gateway: tamper-evident audit trails, rate limiting, cost telemetry. 103 tests. | Python, FastAPI |
 | [**el-barto-serve**](https://github.com/NathanMaine/el-barto-serve) | OpenAI-compatible inference server. Auto-patches Flash Attention for Blackwell GPUs. | Python, PyTorch |
 | [**memoriant-ops-bot**](https://github.com/NathanMaine/memoriant-ops-bot) | Multi-provider AI agent orchestration via Telegram/Matrix. Manages Claude Code, Codex CLI, Gemini CLI. | Python, WebSocket |
 
 ---
 
-## OpenAI Parameter Golf (Active Competition)
+## OpenAI Parameter Golf
+
+*Competition work is under my dentity007 handle (which displays as Nathan Maine).*
 
 Training the best language model in 16MB on 8xH100s. **Only entrant to implement all 7 of OpenAI's explicitly requested research directions.** 13 PRs submitted, 8 complete training scripts (11,810 lines of novel research code), 25+ GPU experiments across RTX 5090 and H200 SXM pods.
 
@@ -110,7 +111,7 @@ Training the best language model in 16MB on 8xH100s. **Only entrant to implement
 
 **Novel techniques developed beyond OpenAI's requests:** Adaptive Density Training (sparse-to-dense progressive unmasking), Echo Training (self-distillation from EMA checkpoints), Gradient Quilting (per-iteration adaptive LR with auto-freezing).
 
-**Infrastructure built:** 345,000-vector expert knowledge base (Brain Trust) from 34 AI/ML experts. Competitive intelligence pipeline analyzing 1,084 competitor PRs. Multi-pod experiment orchestration. Full Hessian GPTQ validation on Hopper (H200 SXM).
+**Infrastructure built:** 486K+ chunk expert knowledge base from 80+ AI/ML experts. Competitive intelligence pipeline analyzing 1,084 competitor PRs. Multi-pod experiment orchestration. Full Hessian GPTQ validation on Hopper (H200 SXM).
 
 ---
 
@@ -151,7 +152,7 @@ Tools for scaling governance across distributed engineering teams in regulated e
 | **GPU Infrastructure** | NVIDIA DGX Spark (GB10, 128GB) for inference/training. 10G backbone, NFS-mounted NAS (3.6TB models). |
 | **Distributed Training** | 8xH100 SXM on RunPod. torchrun DDP, torch.compile, FA3, GPTQ, zstd/Brotli compression. |
 | **CI/CD & Automation** | GitHub Actions, launchd scheduling, automated replay archival, cron-based scraping pipelines. |
-| **Observability** | Brain Trust dashboard (FastAPI + Qdrant + SSE). GPU benchmarking scripts. Pod performance validation. |
+| **Observability** | GPU-accelerated knowledge-platform dashboard (FastAPI + Qdrant + SSE). GPU benchmarking scripts. Pod performance validation. |
 | **Containerization** | Docker Compose for multi-service deployments. TensorRT-LLM containers for NVFP4 quantization. |
 
 ---
@@ -188,4 +189,4 @@ Teaching ML by building from scratch. Free, fill-in-the-blanks format.
 
 **MIT** Applied Data Science Certificate | **Salesforce:** Data Cloud Consultant, Administrator, AI Associate | **Scrum:** CSM | **NVIDIA Inception** Member
 
-📧 nmaine@gmail.com | [LinkedIn](https://www.linkedin.com/in/nathanmaine) | [nathanmaine.com](https://nathanmaine.com) | [HuggingFace](https://huggingface.co/Nathan-Maine) | [Memoriant Inc.](https://github.com/Memoriant)
+📧 nmaine@gmail.com | [LinkedIn](https://www.linkedin.com/in/nathanmaine) | [GitHub](https://github.com/NathanMaine) | [HuggingFace](https://huggingface.co/Nathan-Maine)
