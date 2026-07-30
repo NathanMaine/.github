@@ -33,6 +33,43 @@ Ingest domain expertise at scale, build GPU-accelerated relationship graphs with
 
 ---
 
+## Serving an 80B Model on One DGX Spark
+
+**A complete, reproducible recipe for serving Qwen3-Coder-Next (80B total / 3B active sparse MoE) as an OpenAI-compatible API on a single DGX Spark, with working tool-calling and real multi-user concurrency.**
+
+The decisive details were scattered across NVIDIA forum threads, GitHub issues in three repos, model cards, and a community Docker project: which checkpoint actually performs (a native int4 AutoRound quant, not a GGUF), the one environment variable the int4 kernels need, why driver 590+ matters (CUDA graphs on GB10: 2.8x single-stream speed), and the Secure Boot DKMS trap that hangs installs. This repo puts the working configuration, the reasoning behind every setting, and an honest account of every dead end in one place.
+
+**Results, stated honestly** (confirmed by vLLM's server-side accounting, not client timers):
+
+| What you get | Number | What it means |
+|---|---|---|
+| Solo user | ~70 tok/s | The number that matters if it's just you |
+| Each of 16 concurrent users | ~22 tok/s | What a person actually experiences under full load |
+| Whole-box aggregate | ~350 tok/s | A capacity measure, not a speed; the repo explains why |
+
+Plus 131K context and working tool-calling, on hardware that sits on a desk. The repo invites corrections and competing numbers, and documents which claims from its own first draft were wrong and got fixed before publishing.
+
+[![GitHub](https://img.shields.io/badge/GitHub-NVIDIA--DGX--Spark--with--vLLM-76B900?style=for-the-badge&logo=github)](https://github.com/NathanMaine/NVIDIA-DGX-Spark-with-vLLM)
+
+---
+
+## Promptx
+
+**Turns a vague request into an explicit work order, so local coding models execute instead of guessing.**
+
+Born from a real failure: a local 80B model was asked to "build out the gtm adapters package." It wrote an `__init__.py` importing three sibling modules that did not exist, saw an ImportError naming `__init__.py`, and rewrote `__init__.py`. Ten times. The model was not broken; it was fixing the file the error named instead of creating the files that were missing. The lesson generalizes: **local models follow explicit instructions well and infer badly. Ambiguity is what makes them loop.**
+
+So Promptx splits the job. A cheap, fast cloud model (~$0.10 per million tokens) converts intent into a precise, numbered spec with real file paths (it reads your actual file tree, so it names paths that exist instead of inventing plausible ones). Your local model, excellent at execution and weak at inference, runs the spec. The pairing costs a fraction of a cent per request.
+
+- Zero dependencies: Python 3.9+ standard library only, on purpose (runs on a NAS with no pip)
+- CLI and browser interfaces; direct hand-off to OpenCode with `-x`
+- `--snap` / `--check`: record a baseline before the agent works, verify what it actually did after
+- `--local` mode: run the expander on your own GPU, free
+
+[![GitHub](https://img.shields.io/badge/GitHub-Promptx-blue?style=for-the-badge&logo=github)](https://github.com/NathanMaine/Promptx)
+
+---
+
 ## What I Build
 
 | Project | What It Does | Stack |
