@@ -144,6 +144,7 @@ Training the best language model in 16MB on 8xH100s. Implemented all 7 of OpenAI
 ---
 
 # The Catalog
+**Expand Menus Below**
 
 <details>
 <summary><b>AI/ML Infrastructure and Platform Engineering</b> — training pipelines, inference serving, benchmarks</summary>
