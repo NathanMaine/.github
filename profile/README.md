@@ -29,7 +29,7 @@ Most program managers manage. Most builders build. The rare thing is one person 
 |---|---|---|
 | $20M+ concurrent multi-cloud portfolio, one of two program leaders across eight workstreams | 13 fine-tuned LLMs across 8 architectures (7B-72B), served fully air-gapped | Adversarial prompts merged into [NVIDIA garak](https://github.com/NVIDIA/garak/pull/1660), shipped in v0.15.0 |
 | 700,000-user Okta identity program, Day 1 merger cutover 100% on time, zero unplanned outages | An 80B sparse MoE served on one DGX Spark at ~70 tok/s with tool-calling | CUDA fix merged into an 854-star llama.cpp fork ([TurboQuant #84](https://github.com/TheTom/llama-cpp-turboquant/pull/84)) |
-| 89M records across 28 source systems resolved into 45.9M unified profiles at 95.48% match | Policy-as-code LLM gateway with tamper-evident audit trails, 103 tests | Named in RunPod's blog for tooling nobody asked me to build |
+| 89M records across 28 source systems resolved into 45.9M unified profiles at 95.48% match | Policy-as-code LLM gateway with tamper-evident audit trails, 658 tests | Named in RunPod's blog for tooling nobody asked me to build |
 | Two 5/5 executive CSAT scores from Fortune 500 clients | Evaluation harness that produced a documented negative result, and shipped it anyway | Benchmarks published to r/LocalLLaMA, Hacker News, and NVIDIA forums |
 
 **Every claim on this page links to something you can check.** The ones that don't fit in a link, ask me about.
@@ -106,7 +106,7 @@ Training the best language model in 16MB on 8xH100s. Implemented all 7 of OpenAI
 
 **Companion dashboard:** [parameter-golf-experiment-lab](https://github.com/NathanMaine/parameter-golf-experiment-lab), a [live interactive visualization](https://nathanmaine.github.io/parameter-golf-experiment-lab/) of 793+ scored community submissions with TTT-legality filtering, my 95+ experiment log, technique matrix, and cost analysis.
 
-<details>
+<details open>
 <summary><b>Full submission tables (record, neural track, and all 7 research architectures)</b></summary>
 
 **Record Submissions (3-seed verified):**
@@ -146,7 +146,7 @@ Training the best language model in 16MB on 8xH100s. Implemented all 7 of OpenAI
 # The Catalog
 **Expand Menus Below**
 
-<details>
+<details open>
 <summary><b>AI/ML Infrastructure and Platform Engineering</b> — training pipelines, inference serving, benchmarks</summary>
 
 | Project | What It Does | Stack |
@@ -161,7 +161,7 @@ Training the best language model in 16MB on 8xH100s. Implemented all 7 of OpenAI
 
 </details>
 
-<details>
+<details open>
 <summary><b>Agentic AI and Evaluation Systems</b> — evaluation, recovery, orchestration</summary>
 
 | Project | What It Does | Link |
@@ -178,20 +178,20 @@ Full suite: [agentic-ai-portfolio](https://github.com/NathanMaine/agentic-ai-por
 
 </details>
 
-<details>
+<details open>
 <summary><b>Compliance and Security Automation</b> — governance for regulated environments</summary>
 
 | Project | What It Does | Link |
 | --- | --- | --- |
 | **garak Compliance Probes** | LLM vulnerability probes for NVIDIA garak (see Merged and Credited above) | [Repo](https://github.com/NathanMaine/garak-compliance-probes) |
-| **Governed LLM Gateway** | Policy-as-code gateway: tamper-evident audit trails, rate limiting, cost telemetry. 103 tests | [Repo](https://github.com/NathanMaine/governed-llm-gateway) |
+| **Governed LLM Gateway** | Policy-as-code gateway: tamper-evident audit trails, rate limiting, cost telemetry. 658 tests across 27 files. Red-team measured against a frozen garak corpus: 7,725 held-out adversarial prompts, block rates published per probe family, 2% benign false-positive rate | [Repo](https://github.com/NathanMaine/governed-llm-gateway) |
 | **Governed Voice Agent** | Policy-as-code governance, tamper-evident audit, and per-call cost attribution for LiveKit voice agents, with Doer/Judge governance evals | [Repo](https://github.com/NathanMaine/governed-voice-agent) |
 | **Governance Graph Compiler** | Compiles policy Markdown into DAGs for deterministic audit evaluation | [Repo](https://github.com/NathanMaine/governance-graph-compiler) |
 | **Patent Platform** | Full patent pipeline: search, analyze, draft, review, file. 706+ tests | [Repo](https://github.com/NathanMaine/memoriant-patent-platform) |
 
 </details>
 
-<details>
+<details open>
 <summary><b>Speech AI, Tutorials, and the Plugin Marketplace</b></summary>
 
 **Speech:** [speech-systems](https://github.com/NathanMaine/speech-systems), the hub for a 6-version AI meeting copilot progression (Aurora Echo), a batch ASR pipeline (NVIDIA Parakeet on DGX Spark), and TTS orchestration.
