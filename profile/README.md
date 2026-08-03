@@ -38,7 +38,7 @@ Most program managers manage. Most builders build. The rare thing is one person 
 
 # Flagship Work
 
-## 1 · Serving an 80B Model on One DGX Spark
+## 1 · Serving LLMs on One DGX Spark
 
 **A complete, reproducible recipe for serving Qwen3-Coder-Next (80B total / 3B active sparse MoE) as an OpenAI-compatible API on a single DGX Spark, with working tool-calling and real multi-user concurrency.**
 
@@ -51,6 +51,8 @@ The decisive details were scattered across NVIDIA forum threads, GitHub issues i
 | Whole-box aggregate | ~350 tok/s | A capacity measure, not a speed; the repo explains why |
 
 Confirmed by vLLM's server-side accounting, not client timers. 131K context. The repo documents which claims from its own first draft were wrong and got fixed before publishing.
+
+**Update (Aug 2026):** the same box now also serves **Qwen3.6-35B-A3B (NVFP4) at 102.3 tok/s single-stream** — the fastest generation measured on this hardware, and this time under a real harness: llama-benchy, n=3, std 6.5, at a 30,000-token prompt, raw JSON committed to the repo. A different model measured a different way than the ~70 figure above, so treat it as a second data point rather than a head-to-head. The same update documents the finding that mattered more than the speed: `--gpu-memory-utilization` does not bound vLLM's allocation on GB10 unified memory — `--kv-cache-memory` is the flag that binds, and the repo includes the crash that taught us.
 
 [![GitHub](https://img.shields.io/badge/GitHub-NVIDIA--DGX--Spark--with--vLLM-76B900?style=for-the-badge&logo=github)](https://github.com/NathanMaine/NVIDIA-DGX-Spark-with-vLLM)
 
