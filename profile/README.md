@@ -151,7 +151,7 @@ Training the best language model in 16MB on 8xH100s. Implemented all 7 of OpenAI
 
 | Project | What It Does | Stack |
 | --- | --- | --- |
-| [**NVIDIA-DGX-Spark-with-vLLM**](https://github.com/NathanMaine/NVIDIA-DGX-Spark-with-vLLM) | End-to-end serving recipe for an 80B sparse MoE on one Spark, throughput stated honestly and confirmed server-side | vLLM, CUDA, aarch64 |
+| [**NVIDIA-DGX-Spark-with-vLLM**](https://github.com/NathanMaine/NVIDIA-DGX-Spark-with-vLLM) | Two serving recipes for one Spark: an 80B sparse MoE at ~70 tok/s solo and ~22 tok/s across 16 concurrent, and Qwen3.6-35B-A3B NVFP4 at 102.3 tok/s single stream (llama-benchy, n=3). Raw benchmarks committed; documents the gpu-memory-utilization trap that crashes the box | vLLM, CUDA, aarch64 |
 | [**cmmc-compliance-ai-model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | 13 fine-tuned LLMs across 8 architectures for regulated industries, air-gapped | PyTorch, Unsloth, Ollama |
 | [**dgx-spark-kv-cache-benchmark**](https://huggingface.co/datasets/Nathan-Maine/dgx-spark-kv-cache-benchmark) | KV-cache quantization benchmarks on GB10 (q4/q8/f16 at long context). Published to r/LocalLLaMA, HN, NVIDIA Forums | llama.cpp, CUDA 13.0 |
 | [**nv-ingest-document-pipeline**](https://github.com/NathanMaine/nv-ingest-document-pipeline) | GPU-accelerated PDF extraction to chat-format JSONL training data. 61 tests, 95% coverage, mypy strict | nv-ingest, Docker |
