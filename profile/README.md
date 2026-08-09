@@ -89,6 +89,26 @@ So Promptx splits the job. A cheap, fast cloud model (~$0.10 per million tokens)
 
 [![GitHub](https://img.shields.io/badge/GitHub-Promptx-blue?style=for-the-badge&logo=github)](https://github.com/NathanMaine/Promptx)
 
+## 5 · Gauntletx
+
+<a href="https://github.com/NathanMaine/gauntletx">
+  <img src="https://raw.githubusercontent.com/NathanMaine/.github/main/profile/gauntletx-banner.jpeg" alt="Gauntletx: run the prompt until the weak parts fall off" width="100%">
+</a>
+
+**Gauntlet Loop prompt generator, local-first on DGX Spark vLLM: ten harness targets and live-verified prompt engineering.**
+
+Most prompt work is one-shot: write a prompt, eyeball the output, ship it. The Gauntlet Loop replaces that with a cycle borrowed from delivery practice, diagnosis then architecture then verification, and runs it against ten harness targets so a prompt is measured rather than admired. It runs local-first on a DGX Spark serving vLLM, so iteration costs GPU time instead of API spend and nothing leaves the box. Method credit: Matt Shumer.
+
+[![GitHub](https://img.shields.io/badge/GitHub-gauntletx-blue?style=for-the-badge&logo=github)](https://github.com/NathanMaine/gauntletx)
+
+## 6 · Qwen Code 401 Field Guide
+
+**Qwen Code's 401 "invalid access token or token expired" is almost always the wrong endpoint, not a dead key.**
+
+The error text sends you to regenerate a key that was never the problem, so people burn hours rotating credentials that already worked. This guide names the actual failure: key type and endpoint have to match, and the error message does not tell you which pair you have. It carries a key taxonomy, an endpoint matrix, a diagnosis method that isolates the mismatch in a couple of minutes, a working config template, and a machine-audit script that checks your setup for you.
+
+[![GitHub](https://img.shields.io/badge/GitHub-qwen--code--401--field--guide-blue?style=for-the-badge&logo=github)](https://github.com/NathanMaine/qwen-code-401-field-guide)
+
 ---
 
 # Open Source: Merged and Credited
@@ -153,6 +173,8 @@ Training the best language model in 16MB on 8xH100s. Implemented all 7 of OpenAI
 
 | Project | What It Does | Stack |
 | --- | --- | --- |
+| [**gauntletx**](https://github.com/NathanMaine/gauntletx) | Gauntlet Loop prompt generator, local-first on DGX Spark vLLM. Ten harness targets and live-verified prompt engineering: diagnosis, architecture, and verification instead of one-shot prompting. Method by Matt Shumer | Python, vLLM, DGX Spark |
+| [**qwen-code-401-field-guide**](https://github.com/NathanMaine/qwen-code-401-field-guide) | Qwen Code's 401 "invalid access token or token expired" is usually the wrong endpoint, not a dead key. Key taxonomy, endpoint matrix, diagnosis method, working config template, and a machine-audit script | Qwen Code, OpenAI-compatible endpoints |
 | [**NVIDIA-DGX-Spark-with-vLLM**](https://github.com/NathanMaine/NVIDIA-DGX-Spark-with-vLLM) | Two serving recipes for one Spark: an 80B sparse MoE at ~70 tok/s solo and ~22 tok/s across 16 concurrent, and Qwen3.6-35B-A3B NVFP4 at 102.3 tok/s single stream (llama-benchy, n=3). Raw benchmarks committed; documents the gpu-memory-utilization trap that crashes the box | vLLM, CUDA, aarch64 |
 | [**cmmc-compliance-ai-model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | 13 fine-tuned LLMs across 8 architectures for regulated industries, air-gapped | PyTorch, Unsloth, Ollama |
 | [**dgx-spark-kv-cache-benchmark**](https://huggingface.co/datasets/Nathan-Maine/dgx-spark-kv-cache-benchmark) | KV-cache quantization benchmarks on GB10 (q4/q8/f16 at long context). Published to r/LocalLLaMA, HN, NVIDIA Forums | llama.cpp, CUDA 13.0 |
