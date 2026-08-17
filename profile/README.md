@@ -11,7 +11,7 @@
 [![NVIDIA Inception](https://img.shields.io/badge/NVIDIA_Inception-76B900?style=flat&logo=nvidia&logoColor=white)](#)
 [![Email](https://img.shields.io/badge/Email-nmaine%40gmail.com-red?style=flat&logo=gmail&logoColor=white)](mailto:nmaine@gmail.com)
 
-**$20M+ program portfolio** · **700,000-user identity platform** · **89M records unified into 45.9M profiles** · **13 fine-tuned LLMs** · **code merged into NVIDIA garak** · **a DGX Spark running 24/7 on my desk**
+**$20M+ program portfolio** · **700,000-user identity platform** · **89M records unified into 45.9M profiles** · **13 fine-tuned LLMs** · **code merged into NVIDIA garak** · **three LLMs documented on one DGX Spark**
 
 </div>
 
@@ -28,7 +28,7 @@ Most program managers manage. Most builders build. The rare thing is one person 
 | I deliver programs | I build systems | I prove it |
 |---|---|---|
 | $20M+ concurrent multi-cloud portfolio, one of two program leaders across eight workstreams | 13 fine-tuned LLMs across 8 architectures (7B-72B), served fully air-gapped | Adversarial prompts merged into [NVIDIA garak](https://github.com/NVIDIA/garak/pull/1660), shipped in v0.15.0 |
-| 700,000-user Okta identity program, Day 1 merger cutover 100% on time, zero unplanned outages | An 80B sparse MoE served on one DGX Spark at ~70 tok/s with tool-calling | CUDA fix merged into an 854-star llama.cpp fork ([TurboQuant #84](https://github.com/TheTom/llama-cpp-turboquant/pull/84)) |
+| 700,000-user Okta identity program, Day 1 merger cutover 100% on time, zero unplanned outages | Three LLMs served on one DGX Spark, from an 80B sparse MoE at ~70 tok/s to a vision model at 262K context | CUDA fix merged into an 854-star llama.cpp fork ([TurboQuant #84](https://github.com/TheTom/llama-cpp-turboquant/pull/84)) |
 | 89M records across 28 source systems resolved into 45.9M unified profiles at 95.48% match | Policy-as-code LLM gateway with tamper-evident audit trails, 658 tests | Named in RunPod's blog for tooling nobody asked me to build |
 | Two 5/5 executive CSAT scores from Fortune 500 clients | Evaluation harness that produced a documented negative result, and shipped it anyway | Benchmarks published to r/LocalLLaMA, Hacker News, and NVIDIA forums |
 
@@ -53,6 +53,10 @@ The decisive details were scattered across NVIDIA forum threads, GitHub issues i
 Confirmed by vLLM's server-side accounting, not client timers. 131K context. The repo documents which claims from its own first draft were wrong and got fixed before publishing.
 
 **Update (Aug 2026):** the same box now also serves **Qwen3.6-35B-A3B (NVFP4) at 102.3 tok/s single-stream** — the fastest generation measured on this hardware, and this time under a real harness: llama-benchy, n=3, std 6.5, at a 30,000-token prompt, raw JSON committed to the repo. A different model measured a different way than the ~70 figure above, so treat it as a second data point rather than a head-to-head. The same update documents the finding that mattered more than the speed: `--gpu-memory-utilization` does not bound vLLM's allocation on GB10 unified memory — `--kv-cache-memory` is the flag that binds, and the repo includes the crash that taught us.
+
+**Update (Aug 16, 2026):** the box now runs **Qwen3.8-27B-NVFP4** as its primary model — 262K native context, vision, and tool-calling, on Unsloth's NVFP4 quantization with MTP speculative decoding, served through [MiaAI-Lab's scripts](https://github.com/MiaAI-Lab/Qwen3.8-27B-DGX-Spark-RTX-6000). Three models are now documented in one repo, which is what made the useful result visible: **decode speed on GB10 tracks active parameters per token, not total parameters and not quantization.** The two 3B-active MoE checkpoints run 4-6x faster than this 27B, which has no expert routing, and a different vendor's 27B AWQ build lands in the same class on the same hardware. No serve flag moves it. If you are picking a model for this box, pick on active parameters first.
+
+That section also corrects a number I had already published. I first measured this model at 16.0 tok/s using llama-benchy's `--exact-tg`, which forces output length via `ignore_eos` — it pushes generation past the natural stopping point and appears to depress speculative-decoding acceptance, understating real use by about 45%. The honest figures are 23.3 tok/s at normal context and 17.4 tok/s at a 30,000-token prompt, and all three measurement shapes are published with raw output, including the wrong one, marked do-not-quote. Upstream's own defaults are corrected too: 0.84 utilization with a YaRN-extended 1M window reserved roughly 80 GB of KV cache for a workload measuring 1-4% occupancy and livelocked the machine.
 
 [![GitHub](https://img.shields.io/badge/GitHub-NVIDIA--DGX--Spark--with--vLLM-76B900?style=for-the-badge&logo=github)](https://github.com/NathanMaine/NVIDIA-DGX-Spark-with-vLLM)
 
