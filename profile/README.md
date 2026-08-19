@@ -62,7 +62,7 @@ That section also corrects a number I had already published. I first measured th
 
 ## 2 · NeuralForge
 
-![NeuralForge](https://github.com/user-attachments/assets/68ead074-d399-4b18-9775-1c4d7ff41d29)
+[![NeuralForge](https://github.com/user-attachments/assets/68ead074-d399-4b18-9775-1c4d7ff41d29)](https://github.com/NathanMaine/neuralforge)
 
 **GPU-native knowledge intelligence platform built on 6 NVIDIA technologies.** Your experts. Your GPU. Your data never leaves.
 
