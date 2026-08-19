@@ -60,7 +60,30 @@ That section also corrects a number I had already published. I first measured th
 
 [![GitHub](https://img.shields.io/badge/GitHub-NVIDIA--DGX--Spark--with--vLLM-76B900?style=for-the-badge&logo=github)](https://github.com/NathanMaine/NVIDIA-DGX-Spark-with-vLLM)
 
-## 2 · NeuralForge
+## 2 · Qwen 3.8 on a MacBook, Offline, All Day
+
+[![Qwen 3.8 running offline on a MacBook](https://raw.githubusercontent.com/NathanMaine/qwen-mlx-offline/main/assets/hero.jpg)](https://github.com/NathanMaine/qwen-mlx-offline)
+
+**The same 27B model that runs on the DGX Spark above, running on a laptop instead. 47.5 tokens/second, no internet, no API key, no per-token bill.**
+
+Three things had to be true, and each one is a trap that costs you half your speed with no error message. Qwen3.8 ships a Multi-Token Prediction head that roughly doubles decode, and the MLX conversion **strips it** — it lives separately as a 240 MB adapter that almost nobody mentions. The obvious server cannot use it: `mlx_lm.server` has a `--draft-model` flag that looks correct and silently cannot drive an MTP drafter, so you need `mlx_vlm.server --draft-kind mtp`. And `mlx_lm.server` decodes greedily on a model whose own config asks for temperature 1.0, with no warning. Get all three right and you get 47.5 tok/s at 4-bit. Get them wrong and you get 15.5 and conclude local models are sluggish.
+
+| What you get | Number | What it means |
+|---|---|---|
+| 4-bit, short context | **47.5 ± 4.8 tok/s** | 15.5 GB resident, the everyday build |
+| 4-bit at 8K context | 35.1 ± 2.2 tok/s | The headline does not survive a filled context |
+| 8-bit, short context | 30.2 ± 0.7 tok/s | 28.1 GB resident |
+| MTP speculative decoding | 2.2-3.5x | Lossless: the 27B verifies every drafted token |
+
+Measured with [llama-benchy](https://github.com/eugr/llama-benchy), n=3 per cell, mean ± stdev, on an M5 Max. The repo publishes the raw measurement record unedited, including the runs that came out badly.
+
+Two things it refuses to hide. Decode loses 20-26% by 8K tokens and time-to-first-token climbs to ~15 s, so every number is quoted with its context depth. And GPU allocation ratchets upward without returning to baseline — 17 GB idle, 45 GB mid-generation, 105 GB after one long agent session on a model with 15.7 GB of weights — which keeps you in range of a known Apple GPU driver bug that panicked the machine three times in three days. The repo documents the mitigation stack that took it to zero panics in 8+ hours, and says plainly that eight hours is not proof of a fix.
+
+Ships with `qwen-preflight` (catches Rosetta and an out-of-date macOS before you wait out a model load), `qwen-offline-check` (forces the HuggingFace libraries offline and runs a real generation, so the offline claim is tested rather than asserted), and pinned model revisions, because `mlx-community` re-quantizes in place and a repo id is not a version.
+
+[![GitHub](https://img.shields.io/badge/GitHub-qwen--mlx--offline-000000?style=for-the-badge&logo=apple)](https://github.com/NathanMaine/qwen-mlx-offline)
+
+## 3 · NeuralForge
 
 [![NeuralForge](https://github.com/user-attachments/assets/68ead074-d399-4b18-9775-1c4d7ff41d29)](https://github.com/NathanMaine/neuralforge)
 
@@ -74,7 +97,7 @@ Ingest domain expertise at scale, build GPU-accelerated relationship graphs with
 [![Tests](https://img.shields.io/badge/Tests-1006_passing-brightgreen?style=for-the-badge)](https://github.com/NathanMaine/neuralforge)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](https://github.com/NathanMaine/neuralforge/blob/main/LICENSE)
 
-## 3 · CMMC Compliance AI
+## 4 · CMMC Compliance AI
 
 **13 fine-tuned LLMs across 8 architectures (7B-72B) for cybersecurity compliance: CMMC 2.0, NIST 800-171, HIPAA. Served fully air-gapped, because the organizations that need compliance AI most are the ones that cannot send data to a cloud API.**
 
@@ -83,7 +106,7 @@ Flagship: Gemma 4 31B (eval loss 0.4517). QLoRA/DoRA fine-tuning, GGUF export, O
 [![GitHub](https://img.shields.io/badge/GitHub-cmmc--compliance--ai--model-blue?style=for-the-badge&logo=github)](https://github.com/NathanMaine/cmmc-compliance-ai-model)
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Nathan--Maine-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/Nathan-Maine)
 
-## 4 · Promptx
+## 5 · Promptx
 
 **Turns a vague request into an explicit work order, so local coding models execute instead of guessing.**
 
@@ -93,7 +116,7 @@ So Promptx splits the job. A cheap, fast cloud model (~$0.10 per million tokens)
 
 [![GitHub](https://img.shields.io/badge/GitHub-Promptx-blue?style=for-the-badge&logo=github)](https://github.com/NathanMaine/Promptx)
 
-## 5 · Gauntletx
+## 6 · Gauntletx
 
 <a href="https://github.com/NathanMaine/gauntletx">
   <img src="https://raw.githubusercontent.com/NathanMaine/.github/main/profile/gauntletx-banner.jpeg" alt="Gauntletx: run the prompt until the weak parts fall off" width="100%">
@@ -105,7 +128,7 @@ Most prompt work is one-shot: write a prompt, eyeball the output, ship it. The G
 
 [![GitHub](https://img.shields.io/badge/GitHub-gauntletx-blue?style=for-the-badge&logo=github)](https://github.com/NathanMaine/gauntletx)
 
-## 6 · Qwen Code 401 Field Guide
+## 7 · Qwen Code 401 Field Guide
 
 **Qwen Code's 401 "invalid access token or token expired" is almost always the wrong endpoint, not a dead key.**
 
@@ -180,6 +203,7 @@ Training the best language model in 16MB on 8xH100s. Implemented all 7 of OpenAI
 | [**gauntletx**](https://github.com/NathanMaine/gauntletx) | Gauntlet Loop prompt generator, local-first on DGX Spark vLLM. Ten harness targets and live-verified prompt engineering: diagnosis, architecture, and verification instead of one-shot prompting. Method by Matt Shumer | Python, vLLM, DGX Spark |
 | [**qwen-code-401-field-guide**](https://github.com/NathanMaine/qwen-code-401-field-guide) | Qwen Code's 401 "invalid access token or token expired" is usually the wrong endpoint, not a dead key. Key taxonomy, endpoint matrix, diagnosis method, working config template, and a machine-audit script | Qwen Code, OpenAI-compatible endpoints |
 | [**NVIDIA-DGX-Spark-with-vLLM**](https://github.com/NathanMaine/NVIDIA-DGX-Spark-with-vLLM) | Two serving recipes for one Spark: an 80B sparse MoE at ~70 tok/s solo and ~22 tok/s across 16 concurrent, and Qwen3.6-35B-A3B NVFP4 at 102.3 tok/s single stream (llama-benchy, n=3). Raw benchmarks committed; documents the gpu-memory-utilization trap that crashes the box | vLLM, CUDA, aarch64 |
+| [**qwen-mlx-offline**](https://github.com/NathanMaine/qwen-mlx-offline) | Qwen3.8-27B on Apple Silicon via MLX, fully offline: 47.5 tok/s at 4-bit with lossless MTP speculative decoding (2.2-3.5x). Documents the 240 MB drafter the MLX conversion strips, the server that silently cannot use it, and the GPU driver panic that comes with long runs | MLX, mlx-vlm, Apple Metal |
 | [**cmmc-compliance-ai-model**](https://github.com/NathanMaine/cmmc-compliance-ai-model) | 13 fine-tuned LLMs across 8 architectures for regulated industries, air-gapped | PyTorch, Unsloth, Ollama |
 | [**dgx-spark-kv-cache-benchmark**](https://huggingface.co/datasets/Nathan-Maine/dgx-spark-kv-cache-benchmark) | KV-cache quantization benchmarks on GB10 (q4/q8/f16 at long context). Published to r/LocalLLaMA, HN, NVIDIA Forums | llama.cpp, CUDA 13.0 |
 | [**nv-ingest-document-pipeline**](https://github.com/NathanMaine/nv-ingest-document-pipeline) | GPU-accelerated PDF extraction to chat-format JSONL training data. 61 tests, 95% coverage, mypy strict | nv-ingest, Docker |
